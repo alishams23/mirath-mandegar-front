@@ -1,26 +1,28 @@
 <template>
-    <div class=" flex justify-center">
-        <header class=" w-2/3 bg-[#a6966e] rounded-full mt-3">
-            <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <div class="bg-[#002820] flex justify-center">
+        <header class=" fixed z-10 lg:w-2/3 lg:bg-[#a6966e] md:w-full xs:w-full rounded-full mt-5">
+            <nav class="mx-auto h-[70px] flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div class="flex lg:flex-1">
                     <a href="#" class="-m-1.5 p-1.5">
                         <span class="sr-only">Your Company</span>
-                        <IconChessKnightFilled size="40" color="#002820"></IconChessKnightFilled>
+                        <IconChessKnightFilled size="40" class=" md:text-[#caba8f] sm:text-[#caba8f] lg:text-[#002820]">
+                        </IconChessKnightFilled>
                         <!-- <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                             alt="" /> -->
                     </a>
                 </div>
                 <div class="flex lg:hidden">
                     <button type="button"
-                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-[#caba8f]"
                         @click="mobileMenuOpen = true">
                         <span class="sr-only">Open main menu</span>
-                        <Bars3Icon class="h-6 w-6" aria-hidden="true" />
+                        <Bars3Icon class="h-10 w-10" aria-hidden="true" />
                     </button>
                 </div>
                 <PopoverGroup class="hidden lg:flex lg:gap-x-12">
                     <Popover class="relative">
-                        <PopoverButton class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-[#002820]">
+                        <PopoverButton
+                            class="flex items-center gap-x-1 text-base font-semibold leading-6 text-[#002820]">
                             Product
                             <ChevronDownIcon class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
                         </PopoverButton>
@@ -61,12 +63,12 @@
                         </transition>
                     </Popover>
 
-                    <a href="#" class="text-sm font-semibold leading-6 text-[#002820]">Features</a>
-                    <a href="#" class="text-sm font-semibold leading-6 text-[#002820]">Marketplace</a>
-                    <a href="#" class="text-sm font-semibold leading-6 text-[#002820]">Company</a>
+                    <a href="#" class="text-base font-semibold leading-6 text-[#002820]">Features</a>
+                    <a href="#" class="text-base font-semibold leading-6 text-[#002820]">Marketplace</a>
+                    <a href="#" class="text-base font-semibold leading-6 text-[#002820]">Company</a>
                 </PopoverGroup>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="#" class="text-sm font-semibold leading-6 text-[#002820]">Log in <span
+                    <a href="#" class="text-base font-semibold leading-6 text-[#002820]">Log in <span
                             aria-hidden="true">&rarr;</span></a>
                 </div>
             </nav>
