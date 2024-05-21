@@ -1,6 +1,6 @@
 <template>
     <div class="bg-[#002820] flex justify-center">
-        <header class=" fixed z-10 lg:w-2/3 lg:bg-[#a6966e] md:w-full xs:w-full rounded-full mt-5">
+        <header class=" fixed z-10 lg:w-2/3 bg-gradient-to-br from-[#CCA47C] to-[#bf8553] md:w-full xs:w-full rounded-b-[30px] mt-0 px-8 ">
             <nav class="mx-auto h-[70px] flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div class="flex lg:flex-1">
                     <a href="#" class="-m-1.5 p-1.5">
@@ -22,9 +22,9 @@
                 <PopoverGroup class="hidden lg:flex lg:gap-x-12">
                     <Popover class="relative">
                         <PopoverButton dir="rtl"
-                            class="flex items-center gap-x-1 focus:ring-1 focus:border-black ring-transparent ring-inset text-base font-semibold leading-6 text-[#002820]">
-                            محصول
-                            <ChevronDownIcon class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+                            class="flex items-center gap-x-1 focus:ring-1 focus:border-black ring-transparent ring-inset text-base font-semibold leading-6 text-[#f9f2d7]">
+                            مقالات
+                            <ChevronDownIcon class="h-5 w-5 flex-none text-[#f9f2d7]" aria-hidden="true" />
                         </PopoverButton>
 
                         <transition enter-active-class="transition ease-out duration-200"
@@ -64,14 +64,15 @@
                     </Popover>
 
 
-                    <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#002820]">ویژگی ها</a>
-                    <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#002820]">مکان فروشگاه</a>
-                    <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#002820]">شرکت</a>
+                    <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#f9f2d7]"> ویدئو ها</a>
+                    <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#f9f2d7]"> مکان ها</a>
+
+                    <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#f9f2d7]">محصولات</a>
 
                 </PopoverGroup>
                 <div dir="rtl" class="hidden cursor-pointer lg:flex lg:flex-1 lg:justify-start">
-                    <a @click="open = true" class="text-base font-semibold leading-6 text-[#002820]">وروود/ثبت نام
-                        <span aria-hidden="true">&rarr;</span></a>
+                    <a @click="open = true" class="text-base font-black leading-6 text-[#5b4f1c]">ورود/ثبت نام
+                       </a>
 
                     <TransitionRoot as="template" :show="open">
                         <Dialog as="div" class="relative z-10" @close="open = false">
