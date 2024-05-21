@@ -1,39 +1,20 @@
 <template>
-    <main class=" bg-[#002820] isolate">
+    <main dir="rtl" class=" bg-[#002820] isolate rounded-b-[50px]">
         <div class="relative isolate -z-10">
-            <!-- <svg class="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
-                aria-hidden="true">
-                <defs>
-                    <pattern id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84" width="200" height="200" x="50%" y="-1"
-                        patternUnits="userSpaceOnUse">
-                        <path d="M.5 200V.5H200" fill="none" />
-                    </pattern>
-                </defs>
-                <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
-                    <path d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-                        stroke-width="0" />
-                </svg>
-                <rect width="100%" height="100%" stroke-width="0" fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" />
-            </svg> -->
-            <!-- <div class="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
-                aria-hidden="true">
-                <div class="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
-                    style="clip-path: polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)" />
-            </div> -->
             <div class="overflow-hidden">
-                <div class="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
+                <div class="mx-auto max-w-7xl px-6 pb-[50px] pt-36 sm:pt-60 lg:px-8 lg:pt-[60px]">
                     <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                         <div class="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                            <h1 class=" text-4xl font-bold tracking-tight text-[#FFCD9B] sm:text-6xl">We’re changing the
-                                way people connect.</h1>
+                            <h1 class=" text-4xl font-bold tracking-tight text-[#FFCD9B] sm:text-6xl">ما در حال تغییر
+                                نحوه ارتباط مردم هستیم.</h1>
                             <p class="relative mt-6 text-lg leading-8 text-[#CCA47C] sm:max-w-md lg:max-w-none">
-                                Cupidatat
-                                minim id magna ipsum sint dolor qui. Sunt sit in quis cupidatat mollit aute velit. Et
-                                labore commodo nulla aliqua proident mollit ullamco exercitation tempor. Sint aliqua
-                                anim nulla sunt mollit id pariatur in voluptate cillum. Eu voluptate tempor esse minim
-                                amet fugiat veniam occaecat aliqua.</p>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
+                                است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط
+                                فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای
+                                زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با
+                            </p>
                         </div>
-                        <div class="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
+                        <div class="flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0 holder">
                             <div
                                 class="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
                                 <div class="relative">
@@ -86,10 +67,31 @@
     <section class=" ">
         <SweaperCart />
     </section>
-    <hr>
     <section class="">
         <SweaperSongcart />
     </section>
+    <section class="">
+        <Sweaper-musicalcart />
+    </section>
+    <footer class="mt-10 bg-[#002820] rounded-t-[50px]">
+        <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+            <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
+                <div v-for="item in footerNavigation.main" :key="item.name" class="pb-6">
+                    <a :href="item.href" class="text-sm leading-6 text-[#FFCD9B]">{{
+                    item.name }}</a>
+                </div>
+            </nav>
+            <div class="mt-10 flex justify-center space-x-10">
+                <a v-for="item in footerNavigation.social" :key="item.name" :href="item.href"
+                    class=" transition-all ease-in-out text-[#CCA47C] hover:text-[#FFCD9B] hover:scale-110 duration-150">
+                    <span class="sr-only">{{ item.name }}</span>
+                    <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
+                </a>
+            </div>
+            <p class="mt-10 text-center text-xs leading-5 text-[#CCA47C]">&copy; 2020 Your Company, Inc. All rights
+                reserved.</p>
+        </div>
+    </footer>
 </template>
 <script setup>
 import { defineComponent, h, ref } from 'vue'
@@ -169,6 +171,7 @@ const blogPosts = [
 ]
 const footerNavigation = {
     main: [
+        { name: 'About', href: '#' },
         { name: 'Blog', href: '#' },
         { name: 'Jobs', href: '#' },
         { name: 'Press', href: '#' },
@@ -247,5 +250,18 @@ const footerNavigation = {
     ],
 }
 
+
 const mobileMenuOpen = ref(false)
 </script>
+
+<style>
+@import "https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css";
+
+body {
+    font-family: Vazirmatn;
+}
+
+.holder {
+    margin-top: -20px;
+}
+</style>

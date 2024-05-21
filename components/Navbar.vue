@@ -21,9 +21,9 @@
                 </div>
                 <PopoverGroup class="hidden lg:flex lg:gap-x-12">
                     <Popover class="relative">
-                        <PopoverButton
-                            class="flex items-center gap-x-1 text-base font-semibold leading-6 text-[#002820]">
-                            Product
+                        <PopoverButton dir="rtl"
+                            class="flex items-center gap-x-1 focus:ring-1 focus:border-black ring-transparent ring-inset text-base font-semibold leading-6 text-[#002820]">
+                            محصول
                             <ChevronDownIcon class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
                         </PopoverButton>
 
@@ -63,13 +63,22 @@
                         </transition>
                     </Popover>
 
-                    <a href="#" class="text-base font-semibold leading-6 text-[#002820]">Features</a>
-                    <a href="#" class="text-base font-semibold leading-6 text-[#002820]">Marketplace</a>
-                    <a href="#" class="text-base font-semibold leading-6 text-[#002820]">Company</a>
+
+                    <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#002820]">ویژگی ها</a>
+                    <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#002820]">مکان فروشگاه</a>
+                    <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#002820]">شرکت</a>
+
                 </PopoverGroup>
-                <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="#" class="text-base font-semibold leading-6 text-[#002820]">Log in <span
-                            aria-hidden="true">&rarr;</span></a>
+                <div dir="rtl" class="hidden cursor-pointer lg:flex lg:flex-1 lg:justify-start">
+                    <a @click="open = true" class="text-base font-semibold leading-6 text-[#002820]">وروود/ثبت نام
+                        <span aria-hidden="true">&rarr;</span></a>
+
+                    <TransitionRoot as="template" :show="open">
+                        <Dialog as="div" class="relative z-10" @close="open = false">
+                            <LoginPopup @close="() => { open = false }" />
+                        </Dialog>
+                    </TransitionRoot>
+
                 </div>
             </nav>
             <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
@@ -136,6 +145,7 @@ import {
     Popover,
     PopoverButton,
     PopoverGroup,
+    TransitionRoot,
     PopoverPanel,
 } from '@headlessui/vue'
 import {
@@ -164,4 +174,5 @@ const callsToAction = [
 ]
 
 const mobileMenuOpen = ref(false)
+const open = ref(false)
 </script>

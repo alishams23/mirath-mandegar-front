@@ -15,10 +15,13 @@
     "@pinia/nuxt": "^0.5.1",
     "@tabler/icons-vue": "^3.3.0",
     "@types/three": "^0.164.0",
+    "axios": "^1.6.8",
+    "dat.gui": "^0.7.9",
     "nuxt": "^3.11.2",
     "nuxt-swiper": "^1.2.2",
     "pinia": "^2.1.7",
     "three": "^0.164.1",
+    "vazirmatn": "^33.0.3",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },

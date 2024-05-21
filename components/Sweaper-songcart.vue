@@ -1,9 +1,16 @@
 <template>
-    <div class="">
-        <swiper :modules="modules" :slides-per-view="3" :space-between="50" navigation :pagination="{ clickable: true }"
+    <div class=" mx-0 rounded-[50px]  bg-gradient-to-br from-[#CCA47C] to-[#a6966e] opacity-100 ">
+        <div class=" relative top-[40px] flex items-center justify-end">
+            <h2 class=" text-2xl font-black text-[#002820] my-3 mr-4  ">ویدیو ها</h2>
+            <div class="h-12 w-12 bg-white flex justify-center items-center  mr-10 rounded-xl">
+                <VideoCameraIcon class=" w-9 h-9 text-[#8b4513]" />
+            </div>
+
+        </div>
+        <swiper :modules="modules" :slides-per-view="4.5" :space-between="10" :pagination="{ clickable: true }"
             @swiper="onSwiper" @slideChange="onSlideChange">
             <swiper-slide v-for="item in items" class="mb-9">
-                <div class=" rounded-3xl flex justify-center items-center mt-[100px]">
+                <div class=" rounded-3xl flex justify-center items-center mx-5 mt-[100px]">
                     <Song-cart :image="item.image" :songname="item.songname" :aouther="item.aouther" :views="item.views"
                         :hour="item.hour" />
                 </div>
@@ -14,6 +21,7 @@
 </template>
 <script>
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { VideoCameraIcon } from '@heroicons/vue/20/solid'
 
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -33,6 +41,7 @@ export default {
     components: {
         Swiper,
         SwiperSlide,
+        VideoCameraIcon
     },
     setup() {
         const onSwiper = (swiper) => {
@@ -50,11 +59,11 @@ export default {
     data() {
         return {
             items: [
-                { image: "/public/img/Skyfall2.jpg", songname: "Skyfall", aouther: 'ADELE', views: '10k', hour: '5' },
-                { image: "/assets/img/1.jpg", songname: "The box", aouther: 'Roddy Ricch', views: '5k', hour: '6' },
-                { image: "/assets/img/2.jpg", songname: "Way Down We Go", aouther: 'KALEO', views: '20k', hour: '4' },
-                { image: "/assets/img/3.jpg", songname: "Demons", aouther: 'imagine Dragon', views: '100k', hour: '9' },
-                { image: "/assets/img/4.jpg", songname: "Mount Everest", aouther: 'Labrinth', views: '60k', hour: '10' },
+                { image: "	https://tedline.org/media/pexels-photo-8667422.webp", songname: "Skyfall", aouther: 'ADELE', views: '10k', hour: '5' },
+                { image: "https://tedline.org/media/pexels-photo-8667422.webp", songname: "The box", aouther: 'Roddy Ricch', views: '5k', hour: '6' },
+                { image: "https://tedline.org/media/pexels-photo-8667422.webp", songname: "Way Down We Go", aouther: 'KALEO', views: '20k', hour: '4' },
+                { image: "https://tedline.org/media/pexels-photo-8667422.webp", songname: "Demons", aouther: 'imagine Dragon', views: '100k', hour: '9' },
+                { image: "https://tedline.org/media/pexels-photo-8667422.webp", songname: "Mount Everest", aouther: 'Labrinth', views: '60k', hour: '10' },
             ]
         }
     }
