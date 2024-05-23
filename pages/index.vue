@@ -15,48 +15,49 @@
                                 زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با
                             </p>
                         </div>
-                        <div class="flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0 holder">
-                            <div
-                                class="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
-                                <div class="relative">
-                                    <img src="https://www.eghamat24.com/blog/wp-content/uploads/2024/03/New-Project-2024-04-05T141709.076.webp"
-                                        alt=""
-                                        class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                                    <div
-                                        class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                                </div>
+
+                    </div>
+                    <div class="flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0 holder">
+                        <div
+                            class="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
+                            <div class="relative">
+                                <img src="https://www.eghamat24.com/blog/wp-content/uploads/2024/03/New-Project-2024-04-05T141709.076.webp"
+                                    alt=""
+                                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
+                                <div
+                                    class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                             </div>
-                            <div class="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
-                                <div class="relative">
-                                    <img src="https://www.eghamat24.com/blog/wp-content/uploads/2024/03/New-Project-2024-04-05T142506.728.webp"
-                                        alt=""
-                                        class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                                    <div
-                                        class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                                </div>
-                                <div class="relative">
-                                    <img src="https://www.eghamat24.com/blog/wp-content/uploads/2024/03/New-Project-2024-04-05T143240.402.webp"
-                                        alt=""
-                                        class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                                    <div
-                                        class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                                </div>
+                        </div>
+                        <div class="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
+                            <div class="relative">
+                                <img src="https://www.eghamat24.com/blog/wp-content/uploads/2024/03/New-Project-2024-04-05T142506.728.webp"
+                                    alt=""
+                                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
+                                <div
+                                    class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                             </div>
-                            <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
-                                <div class="relative">
-                                    <img src="https://www.eghamat24.com/blog/wp-content/uploads/2024/03/New-Project-2024-04-05T215635.728.webp"
-                                        alt=""
-                                        class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                                    <div
-                                        class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                                </div>
-                                <div class="relative">
-                                    <img src="https://www.eghamat24.com/blog/wp-content/uploads/2024/03/New-Project-2024-04-05T220432.041.webp"
-                                        alt=""
-                                        class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                                    <div
-                                        class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10">
-                                    </div>
+                            <div class="relative">
+                                <img src="https://www.eghamat24.com/blog/wp-content/uploads/2024/03/New-Project-2024-04-05T143240.402.webp"
+                                    alt=""
+                                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
+                                <div
+                                    class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                            </div>
+                        </div>
+                        <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
+                            <div class="relative">
+                                <img src="https://www.eghamat24.com/blog/wp-content/uploads/2024/03/New-Project-2024-04-05T215635.728.webp"
+                                    alt=""
+                                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
+                                <div
+                                    class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                            </div>
+                            <div class="relative">
+                                <img src="https://www.eghamat24.com/blog/wp-content/uploads/2024/03/New-Project-2024-04-05T220432.041.webp"
+                                    alt=""
+                                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
+                                <div
+                                    class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10">
                                 </div>
                             </div>
                         </div>
@@ -75,8 +76,12 @@
         <Sweaper-musicalcart />
     </section>
     <footer class="mt-10 bg-[#002820] ">
-        <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+        <img src="/images/slimi2.png" class="  w-[200px] mx-auto pt-20 pb-5 sm:pt-24" alt="">
+
+        <div class="mx-auto max-w-7xl overflow-hidden px-6 pb-20 sm:pb-24 lg:px-8">
+
             <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
+
                 <div v-for="item in footerNavigation.main" :key="item.name" class="pb-6">
                     <a :href="item.href" class="text-sm leading-6 text-[#FFCD9B]">{{
                     item.name }}</a>

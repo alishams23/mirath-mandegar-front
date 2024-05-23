@@ -1,15 +1,15 @@
 <template>
     <div class="bg-[#002820] flex justify-center">
-        <header class=" fixed z-10 lg:w-2/3 bg-gradient-to-br from-[#CCA47C] to-[#bf8553] md:w-full xs:w-full rounded-b-[30px] mt-0 px-8 ">
+        <header class=" fixed z-10 lg:w-2/3 bg-gradient-to-b from-[#f0a96b] to-[#bf8553] md:w-full xs:w-full rounded-b-[50px] rounded-t-[10px] mt-0 px-8 ">
             <nav class="mx-auto h-[70px] flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div class="flex lg:flex-1">
-                    <a href="#" class="-m-1.5 p-1.5">
+                    <nuxt-link to="/" class="-m-1.5 p-1.5">
                         <span class="sr-only">Your Company</span>
-                        <IconChessKnightFilled size="40" class=" md:text-[#caba8f] sm:text-[#caba8f] lg:text-[#002820]">
-                        </IconChessKnightFilled>
-                        <!-- <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                            alt="" /> -->
-                    </a>
+                        <!-- <IconChessKnightFilled size="40" class=" md:text-[#caba8f] sm:text-[#caba8f] lg:text-[#002820]">
+                        </IconChessKnightFilled> -->
+                     <img class="h-10 w-auto" src="/images/logo.png"
+                            alt="" /> 
+                    </nuxt-link>
                 </div>
                 <div class="flex lg:hidden">
                     <button type="button"
@@ -71,7 +71,7 @@
 
                 </PopoverGroup>
                 <div dir="rtl" class="hidden cursor-pointer lg:flex lg:flex-1 lg:justify-start">
-                    <a @click="open = true" class="text-base font-black leading-6 text-[#5b4f1c]">ورود/ثبت نام
+                    <a @click="open = true" class="text-base font-black leading-6 text-[#000000]">ورود/ثبت نام
                        </a>
 
                     <TransitionRoot as="template" :show="open">
@@ -163,15 +163,13 @@ import { IconChessKnightFilled } from '@tabler/icons-vue'
 
 const component = { IconChessKnightFilled }
 const products = [
-    { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-    { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-    { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-    { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-    { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
+    { name: 'ایتم اول', description: 'توضیحات', href: '#', icon: ChartPieIcon },
+    { name: 'ایتم دوم', description: 'توضیحات', href: '#', icon: CursorArrowRaysIcon },
+    
 ]
 const callsToAction = [
-    { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-    { name: 'Contact sales', href: '#', icon: PhoneIcon },
+    { name: 'اینستاگرام', href: '#', icon: PlayCircleIcon },
+    { name: ' تماس با ما ', href: '#', icon: PhoneIcon },
 ]
 
 const mobileMenuOpen = ref(false)
