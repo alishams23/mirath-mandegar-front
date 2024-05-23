@@ -7,10 +7,10 @@
         <div dir="rtl" class="">
             <h2 class="text-xl mb-3 font-bold text-black">{{ title }}</h2>
            
-            <p class="text-gray-500">{{ address }}</p>
-            <button class="mt-5 bg-[#8b4513] text-white font-bold py-2 px-4 rounded-2xl">
+            <p class="text-gray-500 mb-5">{{ address }}</p>
+            <nuxt-link to="/information" tag="button" class="mt-5 bg-[#8b4513] text-white font-bold py-2 px-4 rounded-2xl">
                  مشاهده
-            </button>
+            </nuxt-link>
         </div>
     </div>
 </template>

@@ -50,11 +50,11 @@ export default {
     data() {
         return {
             items: [
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "ایرپاد مکس", subtitle: 'با خرید این صاحب یک ایرپاد مکس میشوید 🤙' },
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "نمیدونم", subtitle: 'با خرید این صاحب یک نمیدونم مکس میشوید 🤙' },
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "2نمیدونم", subtitle: 'با خرید این صاحب یک نمیدونم2 مکس میشوید 🤙' },
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "3نمیدونم", subtitle: 'با خرید این صاحب یک نمیدونم3 مکس میشوید 🤙' },
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "4نمیدونم", subtitle: 'با خرید این صاحب یک نمیدونم4 مکس میشوید 🤙' },
+                { image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "نام محصول", subtitle: "توضیحات محصول" },
+                { image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "نام محصول", subtitle: "توضیحات محصول" },
+                { image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "نام محصول", subtitle: "توضیحات محصول" },
+                { image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "نام محصول", subtitle: "توضیحات محصول" },
+                { image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "نام محصول", subtitle: "توضیحات محصول" },
             ]
         }
     }

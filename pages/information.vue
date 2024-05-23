@@ -76,11 +76,13 @@
     </div> -->
 
 
-    <div class="bg-[#002820] p-6 min-h-screen flex flex-col items-center justify-start">
+    <div class=" min-h-screen flex flex-col items-center justify-start">
+<div class="bg-[#002820] py-40 w-full">
 
-        <div class="bg-white shadow-lg rounded-3xl overflow-hidden w-full max-w-2xl mt-28">
+</div>
+        <div class="bg-white shadow-2 rounded-3xl w-full max-w-6xl mx-3 mt-[-200px]">
 
-            <img :src="currentImage.src" alt="Large Picture" class="w-full h-64 object-cover" />
+            <img :src="currentImage.src" alt="Large Picture" class="w-full h-64 rounded-t-3xl object-cover" />
 
             <div dir="rtl" class="p-4">
 
@@ -90,12 +92,10 @@
 
                 <div class="flex justify-between items-center mb-2 mt-5">
                     <button
-                        class="bg-blue-600 text-white font-bold px-4 py-2 rounded-3xl hover:bg-blue-700 transition-colors">اطلاعات
+                        class="bg-[#8b4513] text-white font-bold px-5 py-2 rounded-2xl ">اطلاعات
                         بیشتر</button>
                 </div>
-            </div>
-
-            <div class="grid grid-cols-3 gap-x-4 p-4">
+                <div class="grid grid-cols-3 gap-x-4 p-4">
                 <div v-for="(image, index) in images" :key="index">
                     <img :src="image.src" @click="changeImage(index)" alt="Small Picture 1"
                         class="w-full h-28 object-cover bg-cover rounded-3xl cursor-pointer" />
@@ -105,6 +105,10 @@
                         class="w-full h-28 object-cover bg-cover rounded-3xl cursor-pointer" /> -->
                 </div>
             </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.36662893734!2d54.277689856013005!3d31.9414901371338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fa611c762c5cfeb%3A0xbca5673f21355f7f!2sShahediyeh%2C%20Yazd%20Province%2C%20Iran!5e0!3m2!1sen!2snl!4v1716459029304!5m2!1sen!2snl" class="w-full rounded-3xl" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+           
         </div>
     </div>
 
@@ -119,9 +123,9 @@ export default {
     data() {
         return {
             images: [
-                { id: 1, src: "https://i.pinimg.com/564x/c8/e4/bf/c8e4bf1627bc7e2b724fdcf08aa0a721.jpg", title: "پارک نیازمند کمک شما خیرین", address: " یه جایی در دور دست ها", phone: "09124654875", detail: "خب این یه پارک خرابه هه همینجوری که میبینی توقع چه توضیحی داری " },
-                { id: 2, src: "https://i.pinimg.com/564x/52/20/79/522079525be5b65c8de673533fe53532.jpg", title: "مدرسه نیازمند کمک شما خیرین", address: " یه جایی در دور دست ها", phone: "0912789456", detail: "خب این یه مدرسه خرابه هه همینجوری که میبینی توقع چه توضیحی داری " },
-                { id: 3, src: "https://i.pinimg.com/564x/34/f1/7f/34f17fd4387d935d5202f833fa43686d.jpg", title: "مدرسه به پول شما خیرین نیاز دارد", address: " یه جایی در دور دست ها", phone: "0912741258", detail: "خب این یه مدرسه که پول مخواد همینجوری که میبینی توقع چه توضیحی داری " },
+                { id: 1, src: "https://cdn.alibaba.ir/ostorage/alibaba-mag/wp-content/uploads/attractions-of-yazd.jpg", title: "مکان اول", address: " یه جایی در دور دست ها", phone: "09124654875", detail: "توضیحات" },
+                { id: 2, src: "https://cdn.alibaba.ir/ostorage/alibaba-mag/wp-content/uploads/old_town_Yazd.jpg", title: "مکان دوم", address: " یه جایی در دور دست ها", phone: "0912789456", detail: "توضیحات"},
+                { id: 3, src: "https://cdn.alibaba.ir/ostorage/alibaba-mag/wp-content/uploads/house-of-Lari-family-.jpg", title: "مکان سوم", address: " یه جایی در دور دست ها", phone: "0912741258", detail: "توضیحات"},
                 // { id: 2, image: "https://img.huffingtonpost.com/asset/5bad7c762400005000962785.jpeg?ops=scalefit_720_noupscale", title: "بیمارستان به پول شما خیرین نیاز دارد", address: " یه جایی در دور دست ها", phone: "0912369852", detail: "خب این یه بیمارستان اه در بساط ندارد همینجوری که میبینی توقع چه توضیحی داری " },
             ],
             currentImageIndex: 0
