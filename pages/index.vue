@@ -1,12 +1,102 @@
 <template>
-    <div ref="container"></div>
+    <main dir="rtl" class="  bg-gradient-to-tl from-[#01231d] to-[#033f33] isolate rounded-br-[200px]">
+        <div class="relative isolate -z-10">
+            <div class="overflow-hidden">
+                <div class="mx-auto max-w-7xl px-6 pb-[50px] pt-36 sm:pt-60 lg:px-8 lg:pt-[0px]">
+                    <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+                        <div class="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
+                            <h1 class=" text-4xl font-bold tracking-tight text-[#FFCD9B] sm:text-6xl"> میراثی ماندگار
+                                برای
+                            </h1>
+                            <p class="relative pt-14 text-lg leading-8 text-[#CCA47C] sm:max-w-md lg:max-w-none">
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
+                                است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط
+                                فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای
+                                زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با
+                            </p>
+                        </div>
+                        <div class="flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0 holder">
+                            <div
+                                class="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
+                                <div class="relative">
+                                    <img src="https://www.eghamat24.com/blog/wp-content/uploads/2024/03/New-Project-2024-04-05T141709.076.webp"
+                                        alt=""
+                                        class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
+                                    <div
+                                        class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                                </div>
+                            </div>
+                            <div class="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
+                                <div class="relative">
+                                    <img src="https://www.eghamat24.com/blog/wp-content/uploads/2024/03/New-Project-2024-04-05T142506.728.webp"
+                                        alt=""
+                                        class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
+                                    <div
+                                        class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                                </div>
+                                <div class="relative">
+                                    <img src="https://www.eghamat24.com/blog/wp-content/uploads/2024/03/New-Project-2024-04-05T143240.402.webp"
+                                        alt=""
+                                        class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
+                                    <div
+                                        class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                                </div>
+                            </div>
+                            <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
+                                <div class="relative">
+                                    <img src="https://www.eghamat24.com/blog/wp-content/uploads/2024/03/New-Project-2024-04-05T215635.728.webp"
+                                        alt=""
+                                        class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
+                                    <div
+                                        class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                                </div>
+                                <div class="relative">
+                                    <img src="https://www.eghamat24.com/blog/wp-content/uploads/2024/03/New-Project-2024-04-05T220432.041.webp"
+                                        alt=""
+                                        class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
+                                    <div
+                                        class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class=" ">
+        <SweaperShop />
+    </section>
+    <section class="">
+        <SweaperVideo />
+    </section>
+    <section class="">
+        <Sweaper-musicalcart />
+    </section>
+    <footer class="mt-10 bg-[#002820] ">
+        <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+            <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
+                <div v-for="item in footerNavigation.main" :key="item.name" class="pb-6">
+                    <a :href="item.href" class="text-sm leading-6 text-[#FFCD9B]">{{
+                    item.name }}</a>
+                </div>
+            </nav>
+            <div class="mt-10 flex justify-center space-x-10">
+                <a v-for="item in footerNavigation.social" :key="item.name" :href="item.href"
+                    class=" transition-all ease-in-out text-[#CCA47C] hover:text-[#FFCD9B] hover:scale-110 duration-150">
+                    <span class="sr-only">{{ item.name }}</span>
+                    <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
+                </a>
+            </div>
+            <p class="mt-10 text-center text-xs leading-5 text-[#CCA47C]">&copy; 2020 Your Company, Inc. All rights
+                reserved.</p>
+        </div>
+    </footer>
 </template>
 <script>
-import * as THREE from 'three';
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
-import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { TransformControls } from 'three/examples/jsm/controls/TransformControls.js';
+// import * as THREE from 'three';
+// import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 // import * as dat from 'dat.gui';
 import { useUserStore } from '~/store/user';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
@@ -19,7 +109,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-
+import { FontLoader } from 'three/examples/jsm/Addons.js';
 
 export default {
     computed: {
@@ -58,7 +148,6 @@ export default {
     //         camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
     //         camera.position.z = 20
 
-
     //         renderer = new THREE.WebGLRenderer({ antialias: true })
     //         renderer.setSize(window.innerWidth, window.innerHeight)
     //         document.body.appendChild(renderer.domElement)
@@ -96,20 +185,6 @@ export default {
 
     //         scene.add(spotLight)
 
-    //         // orbit controls
-    //         const controls = new OrbitControls(camera, divContainer)
-    //         controls.maxPolarAngle = Math.PI / 2;
-    //         controls.maxDistance = 50;
-    //         controls.update()
-
-    //         // transform control
-    //         // const transformControl = new TransformControls(camera, divContainer)
-    //         // transformControl.addEventListener('dragging-changed', (event) => {
-    //         //     controls.enabled = !event.value
-    //         // })
-    //         // transformControl.attach(circle)
-    //         // scene.add(transformControl)
-
     //         //GUI
     //         // create GUI
     //         // const gui = new dat.GUI()
@@ -121,25 +196,57 @@ export default {
     //         // circleFolder.open();
 
     //         // text geometry
-    //         const loader = new FontLoader();
+    //         // const loader = new THREE.FontLoader();
 
-    //         loader.load('https://cdn.jsdelivr.net/gh/mrdoob/three.js/examples/fonts/helvetiker_regular.typeface.json', function (font) {
-    //             const textGeometry = new TextGeometry('THREE.js', {
-    //                 font: font,
-    //                 size: 3,
-    //                 height: 2,
-    //                 // curveSegments: 12,
-    //                 // bevelEnabled: true,
-    //                 // bevelThickness: 0.1,
-    //                 // bevelSize: 0.1,
-    //                 // bevelOffset: 0,
-    //                 // bevelSegments: 5
-    //             });
-    //             const textMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-    //             const textMesh = new THREE.Mesh(textGeometry, textMaterial);
-    //             textMesh.position.set(-7, 5, 0)
-    //             scene.add(textMesh);
-    //         });
+    //         // async function createTextMesh() {
+    //         //     const font = await new Promise((resolve, reject) => {
+    //         //         loader.load('https://cdn.jsdelivr.net/gh/mrdoob/three.js/examples/fonts/helvetiker_regular.typeface.json', resolve, reject);
+    //         //     });
+
+    //         //     const textGeometry = new THREE.TextGeometry('Hello', {
+    //         //         font: font,
+    //         //         size: 80,
+    //         //         depth: 5,
+    //         //         curveSegments: 12,
+    //         //         bevelEnabled: true,
+    //         //         bevelThickness: 10,
+    //         //         bevelSize: 8,
+    //         //         bevelOffset: 0,
+    //         //         bevelSegments: 5
+    //         //     });
+
+    //         //     const textMaterial = new THREE.MeshStandardMaterial({ color: 0xff0000 });
+    //         //     const textMesh = new THREE.Mesh(textGeometry, textMaterial);
+    //         //     textMesh.position.set(4, 4, 4);
+    //         //     scene.add(textMesh);
+    //         // }
+
+    //         // createTextMesh().catch(error => console.error(error));
+
+
+    //         const loader = new FontLoader()
+    //         loader.load('https://cdn.jsdelivr.net/gh/mrdoob/three.js/examples/fonts/helvetiker_regular.typeface.json',
+    //             (response) => {
+    //                 const textGeometry = new textGeometry('Hello', {
+    //                     font: response,
+    //                     size: 80,
+    //                     depth: 5,
+    //                     curveSegments: 12,
+    //                     bevelEnabled: true,
+    //                     bevelThickness: 10,
+    //                     bevelSize: 8,
+    //                     bevelOffset: 0,
+    //                     bevelSegments: 5
+    //                 })
+
+    //                 const textMaterial = new THREE.MeshStandardMaterial({ color: 0xff0000 })
+    //                 const textMesh = new THREE.Mesh(textGeometry, textMaterial)
+    //                 textMesh.position.set(4, 4, 4)
+    //                 scene.add(textMesh)
+
+
+    //             }
+    //         )
 
     //         let angel = 0
     //         let angel2 = 0
