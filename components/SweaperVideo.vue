@@ -59,11 +59,11 @@ export default {
     data() {
         return {
             items: [
-                { image: "	https://tedline.org/media/pexels-photo-8667422.webp", songname: "Skyfall", aouther: 'ADELE', views: '10k', hour: '5' },
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", songname: "The box", aouther: 'Roddy Ricch', views: '5k', hour: '6' },
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", songname: "Way Down We Go", aouther: 'KALEO', views: '20k', hour: '4' },
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", songname: "Demons", aouther: 'imagine Dragon', views: '100k', hour: '9' },
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", songname: "Mount Everest", aouther: 'Labrinth', views: '60k', hour: '10' },
+                { image: "	https://tedline.org/media/pexels-photo-8667422.webp", songname: "فیلم یک", aouther: 'ADELE', views: '10k', hour: '5' },
+                { image: "https://tedline.org/media/pexels-photo-8667422.webp", songname: "فیلم دو", aouther: 'Roddy Ricch', views: '5k', hour: '6' },
+                { image: "https://tedline.org/media/pexels-photo-8667422.webp", songname: "فیلم سه ", aouther: 'KALEO', views: '20k', hour: '4' },
+                { image: "https://tedline.org/media/pexels-photo-8667422.webp", songname: "فیلم چهار", aouther: 'imagine Dragon', views: '100k', hour: '9' },
+                { image: "https://tedline.org/media/pexels-photo-8667422.webp", songname: "فیلم پنج", aouther: 'Labrinth', views: '60k', hour: '10' },
             ]
         }
     }
