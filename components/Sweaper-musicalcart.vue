@@ -6,12 +6,11 @@
                 <MapIcon class=" w-8 h-8 text-white" />
             </div>
         </div>
-        <swiper :modules="modules" :slides-per-view="'auto'" :space-between="10"
-            @swiper="onSwiper" @slideChange="onSlideChange">
-            <swiper-slide v-for="item in items" class="mb-9 mx-5 pb-12 pt-5 ">
+        <swiper :modules="modules" :slides-per-view="'auto'" :space-between="10" @swiper="onSwiper"
+            @slideChange="onSlideChange">
+            <swiper-slide v-for="item in buldings" class="mb-9 mx-5 pb-12 pt-5 ">
                 <div class=" flex justify-center items-center ">
-                    <LocationCard :image="item.image" :title="item.title" :holdtime="item.holdtime"
-                        :address="item.address" />
+                    <LocationCard :data="item" />
                 </div>
             </swiper-slide>
             ...
@@ -19,6 +18,10 @@
     </div>
 </template>
 <script>
+import { apiStore } from "~/store/api";
+import axios from "axios";
+import { useUserStore } from "~/store/user";
+
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
 // Import Swiper Vue.js components
@@ -56,16 +59,29 @@ export default {
             modules: [Navigation, Pagination, Scrollbar, A11y],
         };
     },
-    data() {
-        return {
-            items: [
-                { image: "https://cdn.alibaba.ir/ostorage/alibaba-mag/wp-content/uploads/house-of-Lari-family-.jpg", title: "ساخت مدرسه", holdtime: '10/10/1403', address: 'Town Hall,Rome' },
-                { image: "https://cdn.alibaba.ir/ostorage/alibaba-mag/wp-content/uploads/house-of-Lari-family-.jpg", title: "تعمیر بیمارستان", holdtime: '15/12/1403', address: 'Central Hall' },
-                { image: "https://cdn.alibaba.ir/ostorage/alibaba-mag/wp-content/uploads/house-of-Lari-family-.jpg", title: "تعمیر مدرسه", holdtime: '5/7/1403', address: 'Municipal Hall' },
-                { image: "https://cdn.alibaba.ir/ostorage/alibaba-mag/wp-content/uploads/house-of-Lari-family-.jpg", title: "ساخت پارک", holdtime: '6/6/1403', address: 'Town Hall' },
-               
-            ]
-        }
+    data: () => ({
+        buldings: [],
+        loading: true,
+    }),
+    methods: {
+        getData() {
+            this.loading = true;
+            axios
+                .get(`${apiStore().address}/api/project/Buildings/`, {
+                    headers: {
+                        "Content-type": "application/json",
+                        Accept: "application/json",
+                    },
+                })
+                .then((response) => {
+                    this.buldings = response.data;
+                    this.loading = false;
+                    console.log(this.buldings)
+                });
+        },
+    },
+    mounted() {
+        this.getData()
     }
 }
 </script>

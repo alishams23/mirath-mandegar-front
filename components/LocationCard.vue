@@ -2,20 +2,22 @@
     <div class="bg-white shadow-1 pr-2 w-[400px] h-[220px] rounded-3xl flex items-center justify-start space-x-4">
         <div class=" w-[190px] h-full mr-5 flex-shrink-0 ">
             <!-- Image goes here -->
-            <img class="h-full w-full object-cover bg-cover rounded-l-3xl" :src="image" alt="Live Music Session">
+            <img class="h-full w-full object-cover bg-cover rounded-l-3xl" :src="data.photos[0].address"
+                alt="Live Music Session">
         </div>
         <div dir="rtl" class="">
-            <h2 class="text-xl mb-3 font-bold text-black">{{ title }}</h2>
-           
-            <p class="text-gray-500 mb-5">{{ address }}</p>
-            <nuxt-link to="/information" tag="button" class="mt-5 bg-[#8b4513] text-white font-bold py-2 px-4 rounded-2xl">
-                 مشاهده
+            <h2 class="text-xl mb-3 font-bold text-black">{{ data.title }}</h2>
+
+            <p class="text-gray-500 mb-5">{{ data.address }}</p>
+            <nuxt-link :to="'/location/' + data.id" tag="button"
+                class="mt-5 bg-[#8b4513] text-white font-bold py-2 px-4 rounded-2xl">
+                مشاهده
             </nuxt-link>
         </div>
     </div>
 </template>
 <script>
 export default {
-    props: ['image', 'title', 'holdtime', 'address']
+    props: ['data']
 }
 </script>

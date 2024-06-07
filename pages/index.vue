@@ -1,39 +1,50 @@
 <template>
+
     <main dir="rtl" class="  bg-gradient-to-tl from-[#01231d] to-[#033f33] isolate rounded-br-[200px]">
         <div class="relative isolate -z-10">
             <div class="overflow-hidden">
                 <div class="mx-auto max-w-7xl px-6 pb-[50px] pt-36 sm:pt-60 lg:px-8 lg:pt-[0px]">
                     <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                         <div class="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                            <h1 class=" text-4xl font-bold tracking-tight text-[#FFCD9B] sm:text-6xl"> میراثی ماندگار برای 
-                         </h1>
+                            <h1 class=" text-4xl font-bold tracking-tight text-[#FFCD9B] sm:text-6xl"> میراثی ماندگار
+                                برای
+                            </h1>
 
 
-                         <form class="max-w-md  pt-10">   
-    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
-    <div class="relative">
-        <div class="absolute inset-y-0 start-0 flex items-center ps-5 pointer-events-none">
-            <svg class="w-4 h-4 text-[#937d67] " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-            </svg>
-        </div>
-        <input type="search" id="default-search" class="block w-full p-4 ps-10 placeholder:text-[#937d67] text-sm text-[#FFCD9B] border border-transparent rounded-3xl bg-green-900 " placeholder="جستجو میان ایتم های سایت" required />
-        <button type="submit" class="text-[#FFCD9B] absolute end-2.5 bottom-2 bg-green-800 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-2xl text-sm px-5 py-[10px]">جستجو</button>
-    </div>
-</form>
+                            <form class="max-w-md  pt-10">
+                                <label for="default-search"
+                                    class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 start-0 flex items-center ps-5 pointer-events-none">
+                                        <svg class="w-4 h-4 text-[#937d67] " aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                        </svg>
+                                    </div>
+                                    <input type="search" id="default-search"
+                                        class="block w-full p-4 ps-10 placeholder:text-[#937d67] text-sm text-[#FFCD9B] border border-transparent rounded-3xl bg-green-900 "
+                                        placeholder="جستجو میان ایتم های سایت" required />
+                                    <button type="submit"
+                                        class="text-[#FFCD9B] absolute end-2.5 bottom-2 bg-green-800 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-2xl text-sm px-5 py-[10px]">جستجو</button>
+                                </div>
+                            </form>
 
 
 
-                        <div class="flex justify-center items-center ">
-                             <img src="/images/slimi.png" class="  h-24 mx-5" alt="">
-                             <p class="relative pt-10 text-lg leading-8 text-[#CCA47C] sm:max-w-md lg:max-w-none">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                                است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط
-                                فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای
-                                زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با
-                            </p>
-                        </div>
-                            
+                            <div class="flex justify-center items-center ">
+                                <img src="/images/slimi.png" class="  h-24 mx-5" alt="">
+                                <p class="relative pt-10 text-lg leading-8 text-[#CCA47C] sm:max-w-md lg:max-w-none">
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                    گرافیک
+                                    است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط
+                                    فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                                    کتابهای
+                                    زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا
+                                    با
+                                </p>
+                            </div>
+
                         </div>
                         <div class="flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0 holder">
                             <div
@@ -94,13 +105,16 @@
     <section class="">
         <Sweaper-musicalcart />
     </section>
+    <section class="">
+        <SectionSweaperChrityCard />
+    </section>
     <footer class="mt-10 bg-[#002820] ">
         <img src="/images/slimi2.png" class="  w-[200px] mx-auto pt-20 pb-5 sm:pt-24" alt="">
-        
+
         <div class="mx-auto max-w-7xl overflow-hidden px-6 pb-20 sm:pb-24 lg:px-8">
-            
+
             <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
-                
+
                 <div v-for="item in footerNavigation.main" :key="item.name" class="pb-6">
                     <a :href="item.href" class="text-sm leading-6 text-[#FFCD9B]">{{
                     item.name }}</a>
@@ -123,6 +137,11 @@ import { defineComponent, h, ref } from 'vue'
 import { Dialog, DialogPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 
+const nonsense = [
+    { imgurl: 'https://uncrate.com/p/2018/01/m-b-g-class-1.jpg', bag: 'پووووول', bagcolor: 'bg-blue-100', bagtextcolor: 'text-blue-700', name: 'بیایید در این کار خیر شریک باشید', description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها', authorurl: 'https://th.bing.com/th/id/OIP.QjynegEfQVPq5kIEuX9fWQHaFj?rs=1&pid=ImgDetMain', authorname: "حسن علی بقال" },
+    { imgurl: 'https://th.bing.com/th/id/OIP.6IrEBsn7FcPbUlp3LX4UNwHaE7?rs=1&pid=ImgDetMain', bag: ' پووووول بیشتررر', bagcolor: 'bg-green-100', bagtextcolor: 'text-green-700', name: 'بیایید در این کار خیر شریک باشید', description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها', authorurl: 'https://th.bing.com/th/id/R.85403a45ac6ea9ef4f4ce8680372b6a4?rik=F41Y7gSvNk2q5Q&pid=ImgRaw&r=0', authorname: "اصغررررر" },
+    { imgurl: 'https://th.bing.com/th/id/R.6de835ee461b1724e7a9888daff50ceb?rik=EWiSSvnwtIMYCA&pid=ImgRaw&r=0', bag: ' پووووول بیشترررررر', bagcolor: 'bg-purple-100', bagtextcolor: 'text-purple-700', name: 'بیایید در این کار خیر شریک باشید', description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها', authorurl: 'https://st.depositphotos.com/1008939/2959/i/600/depositphotos_29596623-stock-photo-screaming-man.jpg', authorname: "قدرررررررت" },
+]
 
 const navigation = [
     { name: 'Product', href: '#' },
@@ -299,7 +318,8 @@ body {
 .shadow-2 {
     box-shadow: rgba(50, 50, 93, 0.05) 0px 25px 40px -20px, rgba(0, 0, 0, 0.17) 0px 15px 30px -10px !important;
 }
+
 .shadow-3 {
     box-shadow: rgba(50, 50, 93, 0.05) 0px 25px 40px -20px, rgba(0, 0, 0, 0.05) 0px 15px 30px -10px !important;
 }
-</style>   
+</style>

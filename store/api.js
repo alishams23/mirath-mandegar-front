@@ -1,13 +1,8 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
-
-
-export const apiStore = defineStore('api', {
+export const apiStore = defineStore("api", {
   state: () => ({
-    address: 'http://171.22.27.89',
-    ws: 'ws://171.22.27.89',
+    address: "http://5.34.195.173:8000/",
   }),
-  actions: {
-
-  },
+  actions: {},
 });

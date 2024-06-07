@@ -7,12 +7,12 @@
             </div>
 
         </div>
-        <swiper :modules="modules" :slides-per-view="'auto'" :space-between="10" 
+
+        <swiper v-if="loading == false" :modules="modules" :slides-per-view="'auto'" :space-between="10"
             @swiper="onSwiper" @slideChange="onSlideChange">
-            <swiper-slide v-for="item in items" class="mb-9">
+            <swiper-slide v-for="item in videos" class="mb-9">
                 <div class=" rounded-3xl flex justify-center items-center mx-5 mt-[70px]">
-                    <VideoCart :image="item.image" :songname="item.songname" :aouther="item.aouther" :views="item.views"
-                        :hour="item.hour" />
+                    <VideoCart :data="item" />
                 </div>
             </swiper-slide>
             ...
@@ -20,6 +20,9 @@
     </div>
 </template>
 <script>
+import { apiStore } from "~/store/api";
+import axios from "axios";
+import { useUserStore } from "~/store/user";
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { PlayIcon } from '@heroicons/vue/20/solid'
 
@@ -56,16 +59,28 @@ export default {
             modules: [Navigation, Pagination, Scrollbar, A11y],
         };
     },
-    data() {
-        return {
-            items: [
-                { image: "	https://tedline.org/media/pexels-photo-8667422.webp", songname: "فیلم یک", aouther: 'ADELE', views: '10k', hour: '5' },
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", songname: "فیلم دو", aouther: 'Roddy Ricch', views: '5k', hour: '6' },
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", songname: "فیلم سه ", aouther: 'KALEO', views: '20k', hour: '4' },
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", songname: "فیلم چهار", aouther: 'imagine Dragon', views: '100k', hour: '9' },
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", songname: "فیلم پنج", aouther: 'Labrinth', views: '60k', hour: '10' },
-            ]
+    data: () => ({
+        videos: [],
+        loading: true,
+    }),
+    methods: {
+        getData() {
+            this.loading = true;
+            axios
+                .get(`${apiStore().address}/api/video/videos/`, {
+                    headers: {
+                        "Content-type": "application/json",
+                        Accept: "application/json",
+                    },
+                })
+                .then((response) => {
+                    this.videos = response.data;
+                    this.loading = false;
+                });
         }
+    },
+    mounted() {
+        this.getData()
     }
 }
 </script>

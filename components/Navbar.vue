@@ -1,14 +1,13 @@
 <template>
+
     <div class="bg-[#002820] flex justify-center">
-        <header class=" fixed z-10 lg:w-2/3 bg-gradient-to-b from-[#f0a96b] to-[#bf8553] md:w-full xs:w-full rounded-b-[50px] rounded-t-[10px] mt-0 px-8 ">
+        <header
+            class=" fixed z-10 lg:w-2/3 bg-gradient-to-b from-[#f0a96b] to-[#bf8553] md:w-full xs:w-full rounded-b-[50px] rounded-t-[10px] mt-0 px-8 ">
             <nav class="mx-auto h-[70px] flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div class="flex lg:flex-1">
                     <nuxt-link to="/" class="-m-1.5 p-1.5">
                         <span class="sr-only">Your Company</span>
-                        <!-- <IconChessKnightFilled size="40" class=" md:text-[#caba8f] sm:text-[#caba8f] lg:text-[#002820]">
-                        </IconChessKnightFilled> -->
-                     <img class="h-10 w-auto" src="/images/logo.png"
-                            alt="" /> 
+                        <img class="h-10 w-auto" src="/images/logo.png" alt="" />
                     </nuxt-link>
                 </div>
                 <div class="flex lg:hidden">
@@ -69,10 +68,37 @@
 
                     <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#f9f2d7]">محصولات</a>
 
+
                 </PopoverGroup>
+                <div class="relative left-[40px] top-[1px]">
+                    <button @click="toggleDropdown"
+                        class="px-4 py-2 bg-transparent text-white rounded-md flex items-center justify-between">
+                        <img :src="selectedLanguage.flag" alt="" class="w-5 h-5 mr-2">
+                        {{ selectedLanguage.name }}
+                        <svg :class="{ 'transform rotate-180': dropdownOpen }" class="w-4 h-4 ml-2"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <transition name="dropdown" @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter"
+                        @before-leave="beforeLeave" @leave="leave">
+                        <div v-show="dropdownOpen"
+                            class="absolute mt-1 w-full rounded-md bg-white shadow-lg z-10 transition-all duration-300 ease-in-out">
+                            <ul class="py-1">
+                                <li v-for="language in languages" :key="language.code" @click="selectLanguage(language)"
+                                    class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer">
+                                    <img :src="language.flag" alt="" class="w-5 h-5 mr-2">
+                                    {{ language.name }}
+                                </li>
+                            </ul>
+                        </div>
+                    </transition>
+                </div>
                 <div dir="rtl" class="hidden cursor-pointer lg:flex lg:flex-1 lg:justify-start">
                     <a @click="open = true" class="text-base font-black leading-6 text-[#000000]">ورود/ثبت نام
-                       </a>
+                    </a>
 
                     <TransitionRoot as="template" :show="open">
                         <Dialog as="div" class="relative z-10" @close="open = false">
@@ -90,8 +116,6 @@
                         <a href="#" class="-m-1.5 p-1.5">
                             <span class="sr-only">Your Company</span>
                             <IconChessKnightFilled></IconChessKnightFilled>
-                            <!-- <img class="h-8 w-auto"
-                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" /> -->
                         </a>
                         <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700"
                             @click="mobileMenuOpen = false">
@@ -148,6 +172,7 @@ import {
     PopoverGroup,
     TransitionRoot,
     PopoverPanel,
+    Menu, MenuButton, MenuItem, MenuItems
 } from '@headlessui/vue'
 import {
     ArrowPathIcon,
@@ -165,13 +190,86 @@ const component = { IconChessKnightFilled }
 const products = [
     { name: 'ایتم اول', description: 'توضیحات', href: '#', icon: ChartPieIcon },
     { name: 'ایتم دوم', description: 'توضیحات', href: '#', icon: CursorArrowRaysIcon },
-    
+
 ]
 const callsToAction = [
     { name: 'اینستاگرام', href: '#', icon: PlayCircleIcon },
     { name: ' تماس با ما ', href: '#', icon: PhoneIcon },
 ]
+// const dropdownOpen = ref(false)
+// const languages = ref([
+//     { name: 'English', flag: 'https://th.bing.com/th/id/OIP.U-h9wYdOSH047roWjY_1TgAAAA?rs=1&pid=ImgDetMain', code: 'en' },
+//     { name: 'Spanish', flag: 'https://th.bing.com/th/id/R.ee0f24ea55971e8a658a74dae15f1bc5?rik=1bgkmVoTlCYeHg&pid=ImgRaw&r=0', code: 'es' },
+//     { name: 'Italian', flag: 'https://th.bing.com/th/id/OIP.2ftSAOxPs68xu2L-G4LHNwAAAA?w=474&h=325&rs=1&pid=ImgDetMain', code: 'it' },
+//     { name: 'Japanese', flag: 'https://th.bing.com/th/id/OIP.Knk-if9RsKLZkx77PdtrQgHaE8?w=1200&h=800&rs=1&pid=ImgDetMain', code: 'jp' },
+//     { name: 'German', flag: 'https://wallpapercave.com/wp/D1slch9.png', code: 'de' }
+// ])
+// const selectedLanguage = ref(languages.value[0])
 
+// function selectLanguage(language) {
+//     selectedLanguage.value = language
+//     dropdownOpen.value = false
+// }
+const dropdownOpen = ref(false)
+const languages = ref([
+    // ... your languages array
+    { name: 'English', flag: 'https://th.bing.com/th/id/OIP.U-h9wYdOSH047roWjY_1TgAAAA?rs=1&pid=ImgDetMain', code: 'en' },
+    { name: 'Spanish', flag: 'https://th.bing.com/th/id/R.ee0f24ea55971e8a658a74dae15f1bc5?rik=1bgkmVoTlCYeHg&pid=ImgRaw&r=0', code: 'es' },
+    { name: 'Italian', flag: 'https://th.bing.com/th/id/OIP.2ftSAOxPs68xu2L-G4LHNwAAAA?w=474&h=325&rs=1&pid=ImgDetMain', code: 'it' },
+    { name: 'Japanese', flag: 'https://th.bing.com/th/id/OIP.Knk-if9RsKLZkx77PdtrQgHaE8?w=1200&h=800&rs=1&pid=ImgDetMain', code: 'jp' },
+    { name: 'German', flag: 'https://wallpapercave.com/wp/D1slch9.png', code: 'de' }
+])
+const selectedLanguage = ref(languages.value[0])
+
+function toggleDropdown() {
+    dropdownOpen.value = !dropdownOpen.value
+}
+
+function selectLanguage(language) {
+    selectedLanguage.value = language
+    dropdownOpen.value = false
+}
+
+function beforeEnter(el) {
+    el.style.opacity = '0'
+    el.style.maxHeight = '0'
+}
+
+function enter(el, done) {
+    setTimeout(() => {
+        el.style.maxHeight = el.scrollHeight + 'px'
+        el.style.opacity = '1'
+        done()
+    }, 10)
+}
+
+function afterEnter(el) {
+    el.style.maxHeight = null
+}
+
+function beforeLeave(el) {
+    el.style.maxHeight = el.scrollHeight + 'px'
+}
+
+function leave(el, done) {
+    setTimeout(() => {
+        el.style.maxHeight = '0'
+        el.style.opacity = '0'
+        done()
+    }, 10)
+}
 const mobileMenuOpen = ref(false)
 const open = ref(false)
 </script>
+<style scoped>
+.dropdown-enter-active,
+.dropdown-leave-active {
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.dropdown-enter-from,
+.dropdown-leave-to {
+    max-height: 0;
+    opacity: 0;
+}
+</style>

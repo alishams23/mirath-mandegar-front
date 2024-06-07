@@ -6,11 +6,11 @@
                 <ShoppingBagIcon class=" w-8 h-8 text-white" />
             </div>
         </div>
-        <swiper :modules="modules" :slides-per-view="'auto'" :space-between="10" :loop="false"
-          >
+        <swiper :modules="modules" :slides-per-view="'auto'" :space-between="10" :loop="false">
             <swiper-slide v-for="item in items" class="mb-9 ">
                 <div class=" rounded-3xl flex justify-center items-center  mx-5">
-                    <Card :image="item.image" class="mb-16" :title="item.title" :subtitle="item.subtitle" />
+                    <Card :image="item.image" class="mb-16" :title="item.title" :subtitle="item.subtitle"
+                        :data="item" />
                 </div>
             </swiper-slide>
             ...
@@ -43,29 +43,29 @@ export default {
         ShoppingBagIcon
     },
     setup() {
-    return {
-      modules: [Autoplay, Pagination, Navigation],
-    };
-  },
+        return {
+            modules: [Autoplay, Pagination, Navigation],
+        };
+    },
     data() {
         return {
             items: [
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "نام محصول", subtitle: "توضیحات محصول" },
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "نام محصول", subtitle: "توضیحات محصول" },
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "نام محصول", subtitle: "توضیحات محصول" },
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "نام محصول", subtitle: "توضیحات محصول" },
-                { image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "نام محصول", subtitle: "توضیحات محصول" },
+                { id: 2, image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "نام محصول", subtitle: "توضیحات محصول" },
+                { id: 3, image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "نام محصول", subtitle: "توضیحات محصول" },
+                { id: 4, image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "نام محصول", subtitle: "توضیحات محصول" },
+                { id: 5, image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "نام محصول", subtitle: "توضیحات محصول" },
+                { id: 6, image: "https://tedline.org/media/pexels-photo-8667422.webp", title: "نام محصول", subtitle: "توضیحات محصول" },
             ]
         }
     }
 }
 </script>
 
-<style >
+<style>
 /* Add your Tailwind CSS classes here */
 
 
 .swiper-slide {
-  width: auto;
+    width: auto;
 }
 </style>
