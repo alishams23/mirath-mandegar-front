@@ -62,12 +62,3 @@ export default {
     }
 }
 </script>
-
-<style>
-/* Add your Tailwind CSS classes here */
-
-
-.swiper-slide {
-    width: auto;
-}
-</style>
