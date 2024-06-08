@@ -8,8 +8,15 @@
 
         </div>
 
-        <swiper v-if="loading == false" :modules="modules" :slides-per-view="'auto'" :space-between="10"
-            @swiper="onSwiper" @slideChange="onSlideChange">
+        <div v-if="loading" class='flex space-x-1 justify-center items-center  h-[15rem]'>
+            <span class='sr-only'>Loading...</span>
+            <div class='h-5 w-5 bg-[#4f2d14] rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+            <div class='h-5 w-5 bg-[#4f2d14] rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+            <div class='h-5 w-5 bg-[#4f2d14] rounded-full animate-bounce'></div>
+        </div>
+
+        <swiper v-else :modules="modules" :slides-per-view="'auto'" :space-between="10" @swiper="onSwiper"
+            @slideChange="onSlideChange">
             <swiper-slide v-for="item in videos" class="mb-9">
                 <div class=" rounded-3xl flex justify-center items-center mx-5 mt-[70px]">
                     <VideoCard :data="item" />

@@ -4,15 +4,15 @@
 
         </div>
         <div v-if="loading == true" class="mt-[-200px] grid grid-cols-8 grid-rows-8 gap-x-9 gap-y-3 h-screen">
-           <div class="col-start-2 shadow-1 col-span-6 row-span-8 bg-white rounded-3xl">
-             <div class=" pt-20 flex justify-center items-center">
-                <div class="inline-block h-20 w-20 animate-spin rounded-full border-8 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] bg-white  text-blue-700"
-                    role="status">
-                    <span
-                        class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+            <div class="col-start-2 shadow-1 col-span-6 row-span-8 bg-white rounded-3xl">
+                <div class=" pt-20 flex justify-center items-center">
+                    <div class="inline-block h-16 w-16 animate-spin rounded-full border-8 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite]   text-blue-700"
+                        role="status">
+                        <span
+                            class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+                    </div>
                 </div>
-             </div>
-           </div>
+            </div>
         </div>
         <div v-if="loading == false" class="mt-[-200px] grid grid-cols-8 grid-rows-8 gap-x-9 gap-y-3 ">
             <main v-if="blog != null" class=" col-start-2 shadow-1 col-span-4 row-span-8 bg-white rounded-3xl">

@@ -6,6 +6,12 @@
                 <ShoppingBagIcon class=" w-8 h-8 text-white" />
             </div>
         </div>
+        <div class='flex space-x-1 justify-center items-center bg-white h-[10rem]'>
+            <span class='sr-only'>Loading...</span>
+            <div class='h-5 w-5 bg-[#8b4513] rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+            <div class='h-5 w-5 bg-[#8b4513] rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+            <div class='h-5 w-5 bg-[#8b4513] rounded-full animate-bounce'></div>
+        </div>
         <swiper :modules="modules" :slides-per-view="'auto'" :space-between="10" :loop="false">
             <swiper-slide v-for="item in items" class="mb-9 ">
                 <div class=" rounded-3xl flex justify-center items-center  mx-5">

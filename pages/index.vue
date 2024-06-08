@@ -97,7 +97,7 @@
         </div>
     </main> -->
     <section class=" ">
-        <SectionSweaperProjects />
+        <SectionSweaperProducts />
     </section>
     <section class="">
         <SectionSweaperVideos />
