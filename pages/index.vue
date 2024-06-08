@@ -1,5 +1,5 @@
 <template>
-<HeroSection/>
+    <HeroSection />
     <!-- <main dir="rtl" class="  bg-gradient-to-tl from-[#01231d] to-[#033f33] isolate rounded-br-[200px]">
         <div class="relative isolate -z-10">
             <div class="overflow-hidden">
@@ -97,16 +97,16 @@
         </div>
     </main> -->
     <section class=" ">
-        <SweaperShop />
+        <SectionSweaperProjects />
     </section>
     <section class="">
-        <SweaperVideo />
+        <SectionSweaperVideos />
     </section>
     <section class="">
-        <Sweaper-musicalcart />
+        <SectionSweaperProjects />
     </section>
     <section class="">
-        <SectionSweaperChrityCard />
+        <SectionSweaperBlogCards />
     </section>
     <footer class="mt-10 bg-[#002820] ">
         <img src="/images/slimi2.png" class="  w-[200px] mx-auto pt-20 pb-5 sm:pt-24" alt="">
@@ -137,6 +137,7 @@ import { defineComponent, h, ref } from 'vue'
 import { Dialog, DialogPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import HeroSection from "~/components/section/HeroSection.vue"
+
 
 const nonsense = [
     { imgurl: 'https://uncrate.com/p/2018/01/m-b-g-class-1.jpg', bag: 'پووووول', bagcolor: 'bg-blue-100', bagtextcolor: 'text-blue-700', name: 'بیایید در این کار خیر شریک باشید', description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها', authorurl: 'https://th.bing.com/th/id/OIP.QjynegEfQVPq5kIEuX9fWQHaFj?rs=1&pid=ImgDetMain', authorname: "حسن علی بقال" },

@@ -1,16 +1,18 @@
 <template>
-    <div class="mb-[100px]">
-        <div class="flex mt-[100px] mb-10 items-center justify-end">
-            <h2 class=" text-2xl font-black text-right my-3 mr-4  "> مکان ها</h2>
-            <div class="h-12 w-12 bg-[#8b4513] flex justify-center items-center  mr-10 rounded-2xl">
-                <MapIcon class=" w-8 h-8 text-white" />
+    <div class=" mx-10 my-10 rounded-[50px]  bg-gradient-to-br from-[#f7e1cb] to-[#fbd2ad] opacity-100 ">
+        <div class=" relative top-[40px] flex items-center justify-end">
+            <h2 class=" text-2xl font-black text-[#8b4513] my-3 mr-4  ">ویدیو ها</h2>
+            <div class="h-12 w-12 bg-white flex justify-center items-center  mr-10 rounded-2xl">
+                <PlayIcon class=" w-8 h-8 text-[#8b4513]" />
             </div>
+
         </div>
-        <swiper :modules="modules" :slides-per-view="'auto'" :space-between="10" @swiper="onSwiper"
-            @slideChange="onSlideChange">
-            <swiper-slide v-for="item in buldings" class="mb-9 mx-5 pb-12 pt-5 ">
-                <div class=" flex justify-center items-center ">
-                    <LocationCard :data="item" />
+
+        <swiper v-if="loading == false" :modules="modules" :slides-per-view="'auto'" :space-between="10"
+            @swiper="onSwiper" @slideChange="onSlideChange">
+            <swiper-slide v-for="item in videos" class="mb-9">
+                <div class=" rounded-3xl flex justify-center items-center mx-5 mt-[70px]">
+                    <VideoCard :data="item" />
                 </div>
             </swiper-slide>
             ...
@@ -18,22 +20,21 @@
     </div>
 </template>
 <script>
+import VideoCard from "../shared/VideoCard.vue";
 import { apiStore } from "~/store/api";
 import axios from "axios";
 import { useUserStore } from "~/store/user";
-
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { PlayIcon } from '@heroicons/vue/20/solid'
 
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { MapIcon } from '@heroicons/vue/20/solid'
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-
 
 export default {
     computed: {
@@ -44,7 +45,8 @@ export default {
     components: {
         Swiper,
         SwiperSlide,
-        MapIcon
+        PlayIcon,
+        VideoCard
     },
     setup() {
         const onSwiper = (swiper) => {
@@ -60,25 +62,24 @@ export default {
         };
     },
     data: () => ({
-        buldings: [],
+        videos: [],
         loading: true,
     }),
     methods: {
         getData() {
             this.loading = true;
             axios
-                .get(`${apiStore().address}/api/project/Buildings/`, {
+                .get(`${apiStore().address}/api/video/videos/`, {
                     headers: {
                         "Content-type": "application/json",
                         Accept: "application/json",
                     },
                 })
                 .then((response) => {
-                    this.buldings = response.data;
+                    this.videos = response.data;
                     this.loading = false;
-                    console.log(this.buldings)
                 });
-        },
+        }
     },
     mounted() {
         this.getData()

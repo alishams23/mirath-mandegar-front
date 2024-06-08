@@ -23,7 +23,7 @@
         <swiper v-if="loading == false" :modules="modules" :slides-per-view="'auto'" :space-between="0" :loop="false">
             <swiper-slide v-for="item in blogs" class="mb-9 ">
                 <div class="  rounded-3xl flex justify-center items-center  ml-10">
-                    <ChrityCard class="mb-16" :data="item" />
+                    <BlogCard class="mb-16" :data="item" />
                 </div>
             </swiper-slide>
             ...
@@ -48,7 +48,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import ChrityCard from '~/components/shared/ChrityCard.vue';
+import BlogCard from '~/components/shared/BlogCard.vue';
 
 export default {
     computed: {
@@ -60,7 +60,7 @@ export default {
         Swiper,
         SwiperSlide,
         ShoppingBagIcon,
-        ChrityCard,
+        BlogCard,
         IconAlignBoxRightTopFilled
     },
     setup() {

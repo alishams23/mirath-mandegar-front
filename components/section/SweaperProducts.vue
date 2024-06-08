@@ -9,7 +9,7 @@
         <swiper :modules="modules" :slides-per-view="'auto'" :space-between="10" :loop="false">
             <swiper-slide v-for="item in items" class="mb-9 ">
                 <div class=" rounded-3xl flex justify-center items-center  mx-5">
-                    <Card :image="item.image" class="mb-16" :title="item.title" :subtitle="item.subtitle"
+                    <ProductCard :image="item.image" class="mb-16" :title="item.title" :subtitle="item.subtitle"
                         :data="item" />
                 </div>
             </swiper-slide>
@@ -19,6 +19,7 @@
 
 </template>
 <script>
+import ProductCard from '../shared/ProductCard.vue';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { ShoppingBagIcon } from '@heroicons/vue/20/solid'
 
@@ -40,7 +41,8 @@ export default {
     components: {
         Swiper,
         SwiperSlide,
-        ShoppingBagIcon
+        ShoppingBagIcon,
+        ProductCard
     },
     setup() {
         return {
