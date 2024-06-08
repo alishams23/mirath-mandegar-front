@@ -20,9 +20,9 @@
                 <span class="sr-only">Loading...</span>
             </div>
         </div> -->
-        <swiper v-if="loading == false" :modules="modules" :slides-per-view="'auto'" :space-between="10" :loop="false">
+        <swiper v-if="loading == false" :modules="modules" :slides-per-view="'auto'" :space-between="0" :loop="false">
             <swiper-slide v-for="item in blogs" class="mb-9 ">
-                <div class="  rounded-3xl flex justify-center items-center  mx-5">
+                <div class="  rounded-3xl flex justify-center items-center  ml-10">
                     <ChrityCard class="mb-16" :data="item" />
                 </div>
             </swiper-slide>

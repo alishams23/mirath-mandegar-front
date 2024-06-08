@@ -1,17 +1,14 @@
 <template>
-    <div class="max-w-[280px] rounded-3xl overflow-hidden shadow-1">
-        <img class="w-full h-[180px] object-cover" :src="data.imageBlog.photo" alt="Sunset in the mountains">
+    <div class="w-[240px] rounded-3xl overflow-hidden shadow-1">
+        <img class="w-full h-[140px] object-cover" :src="data.imageBlog.photo" alt="Sunset in the mountains">
         <div dir="rtl" class="px-6 py-4">
-            <span
-                class="inline-flex items-center rounded-full px-6 py-1 text-sm font-medium ring-1 ring-inset ring-blue-700/10"
-                :class="data.bagcolor, data.bagtextcolor">{{
-            data.bag }}</span>
-            <h2 class=" text-gray-900 my-2 text-lg font-semibold">{{ data.title }}</h2>
-            <p class="text-gray-700 text-base">
+           
+            <h2 class=" text-gray-900 my-2 mt-1 text-md font-semibold">{{ data.title }}</h2>
+            <p class="text-gray-700 text-sm mb-3">
                 {{ data.body }}
             </p>
             <nuxt-link tag="button" :to="'/blog/' + data.id"
-                class=" bg-[#8b4513] text-white text-md py-2 px-6 rounded-2xl inline-flex items-center mt-3">
+                class=" bg-[#8b4513]  text-white text-sm py-2 px-6 rounded-2xl inline-flex items-center mt-3">
                 <span>مشاهده </span>
             </nuxt-link>
         </div>
