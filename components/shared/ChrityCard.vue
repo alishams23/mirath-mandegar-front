@@ -1,6 +1,6 @@
 <template>
-    <div class="max-w-[355px] rounded-3xl overflow-hidden shadow-lg">
-        <img class="w-full h-[256px] object-cover" :src="data.imageBlog.photo" alt="Sunset in the mountains">
+    <div class="max-w-[280px] rounded-3xl overflow-hidden shadow-1">
+        <img class="w-full h-[180px] object-cover" :src="data.imageBlog.photo" alt="Sunset in the mountains">
         <div dir="rtl" class="px-6 py-4">
             <span
                 class="inline-flex items-center rounded-full px-6 py-1 text-sm font-medium ring-1 ring-inset ring-blue-700/10"

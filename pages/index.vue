@@ -1,6 +1,6 @@
 <template>
-
-    <main dir="rtl" class="  bg-gradient-to-tl from-[#01231d] to-[#033f33] isolate rounded-br-[200px]">
+<HeroSection/>
+    <!-- <main dir="rtl" class="  bg-gradient-to-tl from-[#01231d] to-[#033f33] isolate rounded-br-[200px]">
         <div class="relative isolate -z-10">
             <div class="overflow-hidden">
                 <div class="mx-auto max-w-7xl px-6 pb-[50px] pt-36 sm:pt-60 lg:px-8 lg:pt-[0px]">
@@ -95,7 +95,7 @@
                 </div>
             </div>
         </div>
-    </main>
+    </main> -->
     <section class=" ">
         <SweaperShop />
     </section>
@@ -136,6 +136,7 @@
 import { defineComponent, h, ref } from 'vue'
 import { Dialog, DialogPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+import HeroSection from "~/components/section/HeroSection.vue"
 
 const nonsense = [
     { imgurl: 'https://uncrate.com/p/2018/01/m-b-g-class-1.jpg', bag: 'پووووول', bagcolor: 'bg-blue-100', bagtextcolor: 'text-blue-700', name: 'بیایید در این کار خیر شریک باشید', description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها', authorurl: 'https://th.bing.com/th/id/OIP.QjynegEfQVPq5kIEuX9fWQHaFj?rs=1&pid=ImgDetMain', authorname: "حسن علی بقال" },
@@ -149,71 +150,8 @@ const navigation = [
     { name: 'Resources', href: '#' },
     { name: 'Company', href: '#' },
 ]
-const stats = [
-    { label: 'Transactions every 24 hours', value: '44 million' },
-    { label: 'Assets under holding', value: '$119 trillion' },
-    { label: 'New users annually', value: '46,000' },
-]
-const values = [
-    {
-        name: 'Be world-class',
-        description:
-            'Aut illo quae. Ut et harum ea animi natus. Culpa maiores et sed sint et magnam exercitationem quia. Ullam voluptas nihil vitae dicta molestiae et. Aliquid velit porro vero.',
-    },
-    {
-        name: 'Share everything you know',
-        description:
-            'Mollitia delectus a omnis. Quae velit aliquid. Qui nulla maxime adipisci illo id molestiae. Cumque cum ut minus rerum architecto magnam consequatur. Quia quaerat minima.',
-    },
-    {
-        name: 'Always learning',
-        description:
-            'Aut repellendus et officiis dolor possimus. Deserunt velit quasi sunt fuga error labore quia ipsum. Commodi autem voluptatem nam. Quos voluptatem totam.',
-    },
-    {
-        name: 'Be supportive',
-        description:
-            'Magnam provident veritatis odit. Vitae eligendi repellat non. Eum fugit impedit veritatis ducimus. Non qui aspernatur laudantium modi. Praesentium rerum error deserunt harum.',
-    },
-    {
-        name: 'Take responsibility',
-        description:
-            'Sit minus expedita quam in ullam molestiae dignissimos in harum. Tenetur dolorem iure. Non nesciunt dolorem veniam necessitatibus laboriosam voluptas perspiciatis error.',
-    },
-    {
-        name: 'Enjoy downtime',
-        description:
-            'Ipsa in earum deserunt aut. Quos minus aut animi et soluta. Ipsum dicta ut quia eius. Possimus reprehenderit iste aspernatur ut est velit consequatur distinctio.',
-    },
-]
-const team = [
-    {
-        name: 'Michael Foster',
-        role: 'Co-Founder / CTO',
-        imageUrl:
-            'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    },
-    // More people...
-]
-const blogPosts = [
-    {
-        id: 1,
-        title: 'Vel expedita assumenda placeat aut nisi optio voluptates quas',
-        href: '#',
-        description:
-            'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-        imageUrl:
-            'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
-        date: 'Mar 16, 2020',
-        datetime: '2020-03-16',
-        author: {
-            name: 'Michael Foster',
-            imageUrl:
-                'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        },
-    },
-    // More posts...
-]
+
+
 const footerNavigation = {
     main: [
         { name: 'About', href: '#' },

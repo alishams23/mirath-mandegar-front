@@ -3,7 +3,7 @@
         <div class="bg-[#002820] py-40 w-full">
 
 </div>
-        <div class="mt-[-200px] grid grid-cols-8 grid-rows-8 gap-x-9 gap-y-3 h-screen mb-10">
+        <div class="mt-[-200px] grid grid-cols-8 grid-rows-8 gap-x-9 gap-y-3 h-screen ">
             <main class=" col-start-2 shadow-1 col-span-4 row-span-8 bg-white rounded-3xl">
                 <div class=" w-full h-[300px]">
                     <img class="w-full h-full rounded-t-3xl object-cover bg-cover"
