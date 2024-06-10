@@ -1,7 +1,7 @@
 <template>
-    <div class=" h-[500px] relative bottom-20 ">
+    <div class=" h-[500px] relative bottom-20 py-20">
         <div class="flex mt-[60px] mb-10 items-center justify-end">
-            <h2 class=" text-2xl font-black text-right my-3 mr-4  ">مقالات</h2>
+            <h2 class=" text-xl font-black text-right my-3 mr-4  ">رسانه</h2>
             <div class="h-12 w-12 bg-[#8b4513] flex justify-center items-center  mr-10 rounded-2xl">
                 <IconAlignBoxRightTopFilled class=" w-8 h-8 text-white" />
             </div>

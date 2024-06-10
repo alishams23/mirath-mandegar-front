@@ -79,7 +79,7 @@
                                 کد را وارد کنید</h2>
                         </div>
                         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                            <form class="space-y-6" action="#" method="POST">
+                            <form class="space-y-6" >
                                 <div class="ltr">
                                     <div class="relative mt-2 rounded-full shadow-sm">
                                         <input type="text" placeholder="code" v-model="code" name="phone-number"
@@ -139,7 +139,7 @@
                                 ثبت نام کنید</h2>
                         </div>
                         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                            <form class="space-y-6" action="#" method="POST">
+                            <form class="space-y-6">
                                 <div class="sm:col-span-3">
                                     <label for="first-name"
                                         class="block text-sm font-medium leading-6 text-gray-900">نام</label>
@@ -214,7 +214,7 @@
                                 کد را وارد کنید</h2>
                         </div>
                         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                            <form class="space-y-6" action="#" method="POST">
+                            <form class="space-y-6">
                                 <div class="ltr">
                                     <div class="relative mt-2 rounded-full shadow-sm">
                                         <input type="text" placeholder="code" v-model="code" name="phone-number"
@@ -315,7 +315,7 @@ export default {
         sendSingUpSms() {
             // Ensure the phone number is not empty
             if (this.phoneNumber) {
-                const apiUrl = `${apiStore().address}/api/account/sign-up-sms/`;
+                const apiUrl = `${apiStore().address}api/account/sign-up-sms/`;
                 const data = {
                     first_name: this.first_name, // Assuming the API expects the full number with country code
                     last_name: this.last_name, // Assuming the API expects the full number with country code
@@ -354,7 +354,7 @@ export default {
             // Ensure the phone number is not empty
             this.loading = true
             if (this.code) {
-                const apiUrl = `${apiStore().address}/api/account/code-check-sign-up/`;
+                const apiUrl = `${apiStore().address}api/account/code-check-sign-up/`;
                 const data = {
                     number: this.phoneNumber, // Assuming the API expects the full number with country code
                     code: this.code
@@ -390,7 +390,7 @@ export default {
         sendLoginSms() {
             // Ensure the phone number is not empty
             if (this.phoneNumber) {
-                const apiUrl = `${apiStore().address}/api/account/login-sms/`;
+                const apiUrl = `${apiStore().address}api/account/login-sms/${this.phoneNumber }/`;
                 const data = {
                     number: this.phoneNumber // Assuming the API expects the full number with country code
                 };
@@ -429,7 +429,7 @@ export default {
             // Ensure the phone number is not empty
             this.loading = true
             if (this.code) {
-                const apiUrl = `${apiStore().address}/api/account/code_check/`;
+                const apiUrl = `${apiStore().address}api/account/code-check/`;
                 const data = {
                     number: this.phoneNumber, // Assuming the API expects the full number with country code
                     code: this.code

@@ -96,17 +96,20 @@
             </div>
         </div>
     </main> -->
-    <section class=" ">
-        <SectionSweaperProducts />
-    </section>
     <section class="">
-        <SectionSweaperVideos />
+        <SectionSweaperBlogCards />
+    </section>
+    <section>
+        <SectionIdCard></SectionIdCard>
     </section>
     <section class="">
         <SectionSweaperProjects />
     </section>
     <section class="">
-        <SectionSweaperBlogCards />
+        <SectionSweaperVideos />
+    </section>
+    <section class=" ">
+        <SectionSweaperProducts />
     </section>
     <footer class="mt-10 bg-[#002820] ">
         <img src="/images/slimi2.png" class="  w-[200px] mx-auto pt-20 pb-5 sm:pt-24" alt="">

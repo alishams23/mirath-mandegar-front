@@ -1,7 +1,7 @@
 <template>
-    <div class="mb-[100px]">
-        <div class="flex mt-[100px] mb-10 items-center justify-end">
-            <h2 class=" text-2xl font-black text-right my-3 mr-4  "> مکان ها</h2>
+    <div class="mb-[50px]">
+        <div class="flex mt-[50px] mb-10 items-center justify-end">
+            <h2 class=" text-xl font-black text-right my-3 mr-4  "> پروژه ها</h2>
             <div class="h-12 w-12 bg-[#8b4513] flex justify-center items-center  mr-10 rounded-2xl">
                 <MapIcon class=" w-8 h-8 text-white" />
             </div>

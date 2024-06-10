@@ -13,7 +13,7 @@
                 <div class="flex justify-around items-center p-4">
                     <p class=" text-xl font-semibold">549 <span class="text-sm  text-gray-400">تومان</span></p>
                     <nuxt-link tag="button" :to="'/shop/' + data.id"
-                        class=" bg-[#8b4513] text-white text-md py-2 px-6 rounded-2xl inline-flex items-center">
+                        class=" bg-[#8b4513] text-white text-sm py-2 px-6 rounded-2xl inline-flex items-center">
                         <span>مشاهده </span>
                     </nuxt-link>
                 </div>

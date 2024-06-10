@@ -2,7 +2,7 @@
 
     <div class="bg-[#002820] flex justify-center">
         <header
-            class=" fixed z-[999999] lg:w-2/3 bg-gradient-to-b from-[#db9a61] to-[#a77447] md:w-full xs:w-full rounded-b-[50px] rounded-t-[10px] mt-0 px-8 ">
+            class=" fixed z-[999999] lg:w-2/3 bg-gradient-to-b from-[#e9a467] to-[#ba814f] md:w-full xs:w-full rounded-b-[50px] rounded-t-[10px] mt-0 px-8 ">
             <nav class="mx-auto h-[70px] flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div class="flex lg:flex-1">
                     <nuxt-link to="/" class="-m-1.5 p-1.5">
@@ -97,7 +97,9 @@
                     </transition>
                 </div>
                 <div dir="rtl" class="hidden cursor-pointer lg:flex lg:flex-1 lg:justify-start">
-                    <a @click="open = true" class="text-base font-black leading-6 text-[#000000]">ورود/ثبت نام
+                    <a v-if="userStore.userToken == null" @click="open = true" class="text-base font-black leading-6 text-[#000000]">ورود/ثبت نام
+                    </a>
+                    <a v-else @click="userStore.logout()" class="text-base font-black leading-6 text-[#000000]">خروج
                     </a>
 
                     <TransitionRoot as="template" :show="open">
@@ -172,53 +174,36 @@ import {
     PopoverGroup,
     TransitionRoot,
     PopoverPanel,
-    Menu, MenuButton, MenuItem, MenuItems
 } from '@headlessui/vue'
 import {
-    ArrowPathIcon,
     Bars3Icon,
     ChartPieIcon,
     CursorArrowRaysIcon,
-    FingerPrintIcon,
-    SquaresPlusIcon,
     XMarkIcon,
 } from '@heroicons/vue/24/outline'
+import { useUserStore } from '~/store/user';
+
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid'
 import { IconChessKnightFilled } from '@tabler/icons-vue'
 
-const component = { IconChessKnightFilled }
 const products = [
     { name: 'ایتم اول', description: 'توضیحات', href: '#', icon: ChartPieIcon },
     { name: 'ایتم دوم', description: 'توضیحات', href: '#', icon: CursorArrowRaysIcon },
-
 ]
 const callsToAction = [
     { name: 'اینستاگرام', href: '#', icon: PlayCircleIcon },
     { name: ' تماس با ما ', href: '#', icon: PhoneIcon },
 ]
-// const dropdownOpen = ref(false)
-// const languages = ref([
-//     { name: 'English', flag: 'https://th.bing.com/th/id/OIP.U-h9wYdOSH047roWjY_1TgAAAA?rs=1&pid=ImgDetMain', code: 'en' },
-//     { name: 'Spanish', flag: 'https://th.bing.com/th/id/R.ee0f24ea55971e8a658a74dae15f1bc5?rik=1bgkmVoTlCYeHg&pid=ImgRaw&r=0', code: 'es' },
-//     { name: 'Italian', flag: 'https://th.bing.com/th/id/OIP.2ftSAOxPs68xu2L-G4LHNwAAAA?w=474&h=325&rs=1&pid=ImgDetMain', code: 'it' },
-//     { name: 'Japanese', flag: 'https://th.bing.com/th/id/OIP.Knk-if9RsKLZkx77PdtrQgHaE8?w=1200&h=800&rs=1&pid=ImgDetMain', code: 'jp' },
-//     { name: 'German', flag: 'https://wallpapercave.com/wp/D1slch9.png', code: 'de' }
-// ])
-// const selectedLanguage = ref(languages.value[0])
-
-// function selectLanguage(language) {
-//     selectedLanguage.value = language
-//     dropdownOpen.value = false
-// }
 const dropdownOpen = ref(false)
 const languages = ref([
-    // ... your languages array
+   
+    { name: 'فارسی', flag: 'https://th.bing.com/th/id/R.ee0f24ea55971e8a658a74dae15f1bc5?rik=1bgkmVoTlCYeHg&pid=ImgRaw&r=0', code: 'es' },
     { name: 'English', flag: 'https://th.bing.com/th/id/OIP.U-h9wYdOSH047roWjY_1TgAAAA?rs=1&pid=ImgDetMain', code: 'en' },
-    { name: 'Spanish', flag: 'https://th.bing.com/th/id/R.ee0f24ea55971e8a658a74dae15f1bc5?rik=1bgkmVoTlCYeHg&pid=ImgRaw&r=0', code: 'es' },
-    { name: 'Italian', flag: 'https://th.bing.com/th/id/OIP.2ftSAOxPs68xu2L-G4LHNwAAAA?w=474&h=325&rs=1&pid=ImgDetMain', code: 'it' },
-    { name: 'Japanese', flag: 'https://th.bing.com/th/id/OIP.Knk-if9RsKLZkx77PdtrQgHaE8?w=1200&h=800&rs=1&pid=ImgDetMain', code: 'jp' },
-    { name: 'German', flag: 'https://wallpapercave.com/wp/D1slch9.png', code: 'de' }
+
 ])
+
+const userStore = useUserStore()
+
 const selectedLanguage = ref(languages.value[0])
 
 function toggleDropdown() {
