@@ -2,7 +2,7 @@
 
     <div class="bg-[#002820] flex justify-center">
         <header
-            class=" fixed z-[999999] lg:w-2/3 bg-gradient-to-b from-[#db9a61] to-[#a77447] md:w-full xs:w-full rounded-b-[50px] rounded-t-[10px] mt-0 px-8 ">
+            class=" fixed z-[999999] lg:w-2/3 bg-gradient-to-b from-[#e9a467] to-[#ba814f] md:w-full xs:w-full rounded-b-[50px] rounded-t-[10px] mt-0 px-8 ">
             <nav class="mx-auto h-[70px] flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div class="flex lg:flex-1">
                     <nuxt-link to="/" class="-m-1.5 p-1.5">

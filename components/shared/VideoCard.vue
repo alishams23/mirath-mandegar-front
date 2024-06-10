@@ -2,7 +2,7 @@
 
 
 
-    <div class="relative mb-[30px] rounded-3xl overflow-hidden w-[250px] h-[300px]">
+    <div class="relative mb-[30px] rounded-3xl overflow-hidden w-[230px] h-[250px]">
 
         <img class="w-full h-full object-cover" :src="data.image" alt="Thumbnail">
 
@@ -15,7 +15,7 @@
             </div>
         </a>
 
-        <div class="absolute top-[206px] bottom-0 left-0 right-0 p-4  from-red via-transparent to-transparent">
+        <div class="absolute top-[180px] bottom-0 left-0 right-0 p-4  from-red via-transparent to-transparent">
             <h3 class="text-md text-center mb-5 text-white font-bold">{{ data.title }}</h3>
 
         </div>

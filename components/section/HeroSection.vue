@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gradient-to-r from-[#033f33]  from-70% to-[#01231d] rounded-b-[200px]  ">
+    <div class="bg-gradient-to-r from-[#033f33]   from-70% to-[#01231d]   ">
      
         <!-- from-[#033f33] -->
       <div class="relative" style="direction: rtl;">
@@ -16,8 +16,7 @@
                     Anim aute id magna aliqua ad ad non deserunt sunt. <a href="#" class="whitespace-nowrap font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true" />Read more <span aria-hidden="true">&rarr;</span></a>
                   </div> -->
                 </div>
-                <h1 class=" text-4xl font-bold tracking-tight text-[#FFCD9B] sm:text-6xl"> میراثی ماندگار
-                                برای
+                <h1 class=" text-3xl font-bold   text-[#FFCD9B] sm:text-4xl"><span class="text-[#c7915b]">خشت</span> به <span class="text-[#c7915b]">خشت</span> برای بافت تاریخی
                             </h1>
 
 
@@ -44,7 +43,7 @@
 
                             <div class="flex justify-center items-center ">
                                 <img src="/images/slimi.png" class="  h-24 mx-5" alt="">
-                                <p class="relative pt-10 text-lg leading-8 text-[#CCA47C] sm:max-w-md lg:max-w-none">
+                                <p class="relative pt-10 text-md leading-8 text-[#f5cba1] sm:max-w-md lg:max-w-none">
                                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
                                     گرافیک
                                     است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط

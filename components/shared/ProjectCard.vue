@@ -5,10 +5,10 @@
             <img class="h-full w-full object-cover bg-cover rounded-l-3xl" :src="data.photos[0].address"
                 alt="Live Music Session">
         </div>
-        <div dir="rtl" class="">
-            <h2 class="text-xl mb-3 font-bold text-black">{{ data.title }}</h2>
+        <div dir="rtl" class="w-full px-5">
+            <h2 class="text-md mb-2 font-bold text-black">{{ data.title }}</h2>
 
-            <p class="text-gray-500 mb-5">{{ data.address }}</p>
+            <p class="text-gray-500 font-light text-sm mb-8">{{ data.address }}</p>
             <nuxt-link :to="'/location/' + data.id" tag="button"
                 class="mt-5 bg-[#8b4513] text-sm text-white  py-2 px-4 rounded-2xl">
                 مشاهده
