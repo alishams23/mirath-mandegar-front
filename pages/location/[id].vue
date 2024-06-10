@@ -12,7 +12,7 @@
         </div>
         <div v-else class="bg-white shadow-2 rounded-3xl w-full max-w-6xl mx-3 mt-[-200px]">
 
-            <img :src="building.photos[0].address" alt="Large Picture" class="w-full h-64 rounded-t-3xl object-cover" />
+            <img :src="building.photos[currentImageIndex].address" alt="Large Picture" class="w-full h-64 rounded-t-3xl object-cover" />
 
             <div dir="rtl" class="p-4">
 
@@ -62,6 +62,7 @@ export default {
     data: () => ({
         building: null,
         loading: true,
+        currentImageIndex:0,
     }),
 
     methods: {

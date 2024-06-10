@@ -10,7 +10,7 @@
 
             <p class="text-gray-500 mb-5">{{ data.address }}</p>
             <nuxt-link :to="'/location/' + data.id" tag="button"
-                class="mt-5 bg-[#8b4513] text-white font-bold py-2 px-4 rounded-2xl">
+                class="mt-5 bg-[#8b4513] text-sm text-white  py-2 px-4 rounded-2xl">
                 مشاهده
             </nuxt-link>
         </div>
