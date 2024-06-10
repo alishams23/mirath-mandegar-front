@@ -13,7 +13,7 @@
                 leave-from="opacity-100 translate-y-0 sm:scale-100"
                 leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
                 <DialogPanel
-                    class="relative text-right rtl transform overflow-hidden rounded-[25px] bg-white text-left shadow-xl transition-all w-full lg:my-8 lg:w-full lg:max-w-lg">
+                    class="relative text-right rtl transform overflow-hidden rounded-[25px] bg-white  shadow-xl transition-all w-full lg:my-8 lg:w-full lg:max-w-lg">
                     <!-- Your content -->
                     <div v-if="dialog_page == 'get_number'"
                         class="flex min-h-full flex-1 flex-col justify-center px-6 py-5 lg:px-8">
@@ -299,7 +299,7 @@ export default {
         }
     },
     methods: {
-        startCooldown() {
+        startCoolDown() {
             this.cooldownInterval = setInterval(() => {
                 if (this.cooldownTime > 0) {
                     // Decrease the cooldown time
@@ -336,7 +336,7 @@ export default {
                         this.cooldownTime = 120; // Reset to 2 minutes
                         clearInterval(this.cooldownInterval);
                         this.isCooldownActive = true;
-                        this.startCooldown();
+                        this.startCoolDown();
                         // You can change the dialog page or show a success message here
                     })
                     .catch(error => {
@@ -403,26 +403,27 @@ export default {
                 })
                     .then(response => {
                         // Handle success response
-                        console.log('SMS sent successfully:', response);
+                        console.log('SMS is sent successfully:', response);
                         this.dialog_page = 'get_code'
                         this.loading = false
                         this.cooldownTime = 120; // Reset to 2 minutes
                         clearInterval(this.cooldownInterval);
                         this.isCooldownActive = true;
-                        this.startCooldown();
-                        // You can change the dialog page or show a success message here
+                        this.error= null;
+                        this.startCoolDown();
+                       
                     })
                     .catch(error => {
                         // Handle error response
                         this.error = 'کاربری با این شماره وجود ندارد'
                         this.loading = false
                         console.error('Error sending SMS:', error);
-                        // You can show an error message to the user here
+                    
                     });
             } else {
                 // Phone number is empty, handle accordingly
                 console.error('Phone number is empty');
-                // You can show an error message to the user here
+               
             }
         },
         check_code() {
