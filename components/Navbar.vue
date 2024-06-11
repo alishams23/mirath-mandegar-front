@@ -70,34 +70,45 @@
 
 
                 </PopoverGroup>
-                <div class="relative left-[40px] top-[1px]">
-                    <button @click="toggleDropdown"
-                        class="px-4 py-2 bg-transparent text-white rounded-md flex items-center justify-between">
-                        <img :src="selectedLanguage.flag" alt="" class="w-5 h-5 mr-2">
-                        {{ selectedLanguage.name }}
-                        <svg :class="{ 'transform rotate-180': dropdownOpen }" class="w-4 h-4 ml-2"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                    <transition name="dropdown" @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter"
-                        @before-leave="beforeLeave" @leave="leave">
-                        <div v-show="dropdownOpen"
-                            class="absolute mt-1 w-full rounded-md bg-white shadow-lg z-10 transition-all duration-300 ease-in-out">
-                            <ul class="py-1">
-                                <li v-for="language in languages" :key="language.code" @click="selectLanguage(language)"
-                                    class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer">
-                                    <img :src="language.flag" alt="" class="w-5 h-5 mr-2">
-                                    {{ language.name }}
-                                </li>
-                            </ul>
+                <div class=" absolute top-[17px] right-[40px] w-56 ">
+                    <Menu as="div" class="relative inline-block text-left">
+                        <div>
+                            <MenuButton
+                                class="inline-flex w-full justify-center rounded-md bg-transparent px-4 py-2 text-base font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
+                                <img v-if="selectedLang.src !== null" :src="selectedLang.src" alt="زبان انتخابی"
+                                    class="w-6 h-6 mr-2" />
+                                {{ selectedLabel || 'زبان سایت' }}
+                                <ChevronDownIcon class="-mr-1 ml-2 h-5 w-5 text-violet-200 hover:text-violet-100"
+                                    aria-hidden="true" />
+                            </MenuButton>
                         </div>
-                    </transition>
+
+                        <transition enter-active-class="transition duration-100 ease-out"
+                            enter-from-class="transform scale-95 opacity-0"
+                            enter-to-class="transform scale-100 opacity-100"
+                            leave-active-class="transition duration-75 ease-in"
+                            leave-from-class="transform scale-100 opacity-100"
+                            leave-to-class="transform scale-95 opacity-0">
+                            <MenuItems
+                                class="absolute right-0 mt-2 w-32 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
+                                <div class="px-1 py-1">
+                                    <MenuItem v-for="item in lang" v-slot="{ active }">
+                                    <button :class="[
+                            active ? 'bg-gray-200 text-black' : 'text-gray-900',
+                            'group flex w-full items-center justify-center rounded-md px-2 py-2 text-sm',
+                        ]" @click="selectItem(item.name)">
+                                        <img :src="item.src" class=" w-7 h-7 object-cover mr-2">
+                                        <span class=" text-base font-semibold">{{ item.name }}</span>
+                                    </button>
+                                    </MenuItem>
+                                </div>
+                            </MenuItems>
+                        </transition>
+                    </Menu>
                 </div>
                 <div dir="rtl" class="hidden cursor-pointer lg:flex lg:flex-1 lg:justify-start">
-                    <a v-if="userStore.userToken == null" @click="open = true" class="text-base font-black leading-6 text-[#000000]">ورود/ثبت نام
+                    <a v-if="userStore.userToken == null" @click="open = true"
+                        class="text-base font-black leading-6 text-[#000000]">ورود/ثبت نام
                     </a>
                     <a v-else @click="userStore.logout()" class="text-base font-black leading-6 text-[#000000]">خروج
                     </a>
@@ -173,7 +184,7 @@ import {
     PopoverButton,
     PopoverGroup,
     TransitionRoot,
-    PopoverPanel,
+    PopoverPanel, Menu, MenuButton, MenuItems, MenuItem
 } from '@headlessui/vue'
 import {
     Bars3Icon,
@@ -186,6 +197,8 @@ import { useUserStore } from '~/store/user';
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid'
 import { IconChessKnightFilled } from '@tabler/icons-vue'
 
+
+
 const products = [
     { name: 'ایتم اول', description: 'توضیحات', href: '#', icon: ChartPieIcon },
     { name: 'ایتم دوم', description: 'توضیحات', href: '#', icon: CursorArrowRaysIcon },
@@ -194,67 +207,21 @@ const callsToAction = [
     { name: 'اینستاگرام', href: '#', icon: PlayCircleIcon },
     { name: ' تماس با ما ', href: '#', icon: PhoneIcon },
 ]
-const dropdownOpen = ref(false)
-const languages = ref([
-   
-    { name: 'فارسی', flag: 'https://th.bing.com/th/id/R.ee0f24ea55971e8a658a74dae15f1bc5?rik=1bgkmVoTlCYeHg&pid=ImgRaw&r=0', code: 'es' },
-    { name: 'English', flag: 'https://th.bing.com/th/id/OIP.U-h9wYdOSH047roWjY_1TgAAAA?rs=1&pid=ImgDetMain', code: 'en' },
+const lang = [
+    { name: 'فارسی', src: 'https://th.bing.com/th/id/R.e8bac5cf97b9a7f4c847d02a46fa10a5?rik=bRXeTXg7O%2bVnmg&pid=ImgRaw&r=0' },
+    { name: 'English', src: 'https://th.bing.com/th/id/OIP.e_bbO_MwobphE7AiIzUzyQHaEA?rs=1&pid=ImgDetMain' }
+]
 
-])
+const selectedLabel = ref(null)
+const selectedLang = ref({ name: 'فارسی', src: null })
+function selectItem(label) {
+    selectedLabel.value = label
+    selectedLang.value = lang.find((item) => item.name === label)
+}
 
 const userStore = useUserStore()
 
-const selectedLanguage = ref(languages.value[0])
 
-function toggleDropdown() {
-    dropdownOpen.value = !dropdownOpen.value
-}
-
-function selectLanguage(language) {
-    selectedLanguage.value = language
-    dropdownOpen.value = false
-}
-
-function beforeEnter(el) {
-    el.style.opacity = '0'
-    el.style.maxHeight = '0'
-}
-
-function enter(el, done) {
-    setTimeout(() => {
-        el.style.maxHeight = el.scrollHeight + 'px'
-        el.style.opacity = '1'
-        done()
-    }, 10)
-}
-
-function afterEnter(el) {
-    el.style.maxHeight = null
-}
-
-function beforeLeave(el) {
-    el.style.maxHeight = el.scrollHeight + 'px'
-}
-
-function leave(el, done) {
-    setTimeout(() => {
-        el.style.maxHeight = '0'
-        el.style.opacity = '0'
-        done()
-    }, 10)
-}
 const mobileMenuOpen = ref(false)
 const open = ref(false)
 </script>
-<style scoped>
-.dropdown-enter-active,
-.dropdown-leave-active {
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-}
-
-.dropdown-enter-from,
-.dropdown-leave-to {
-    max-height: 0;
-    opacity: 0;
-}
-</style>
