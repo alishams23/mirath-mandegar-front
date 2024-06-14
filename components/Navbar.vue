@@ -96,7 +96,7 @@
                                     <button :class="[
                             active ? 'bg-gray-200 text-black' : 'text-gray-900',
                             'group flex w-full items-center justify-center rounded-md px-2 py-2 text-sm',
-                        ]" @click="selectItem(item.name)">
+                        ]" @click="selectItem(item.name); openModal()">
                                         <img :src="item.src" class=" w-7 h-7 object-cover mr-2">
                                         <span class=" text-base font-semibold">{{ item.name }}</span>
                                     </button>
@@ -106,6 +106,49 @@
                         </transition>
                     </Menu>
                 </div>
+                <TransitionRoot appear :show="isOpen" as="template">
+                    <Dialog as="div" @close="closeModal" class="relative z-10">
+                        <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0"
+                            enter-to="opacity-100" leave="duration-200 ease-in" leave-from="opacity-100"
+                            leave-to="opacity-0">
+                            <div class="fixed inset-0 bg-black/25" />
+                        </TransitionChild>
+
+                        <div class="fixed inset-0 overflow-y-auto">
+                            <div class="flex min-h-full items-center justify-center p-4 text-center">
+                                <TransitionChild as="template" enter="duration-300 ease-out"
+                                    enter-from="opacity-0 scale-95" enter-to="opacity-100 scale-100"
+                                    leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
+                                    leave-to="opacity-0 scale-95">
+                                    <DialogPanel
+                                        class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                                        <div class="mt-2 flex justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                class="w-14 h-w-14 animate-spin" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                                                <path fill-rule="evenodd"
+                                                    d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                                            </svg>
+                                        </div>
+                                        <DialogTitle as="h3"
+                                            class="text-lg text-center font-medium mt-6 leading-6 text-gray-900">
+                                            درحال اپدیت
+                                        </DialogTitle>
+
+                                        <!-- <div class="mt-4">
+                                            <button type="button"
+                                                class="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                                                @click="closeModal">
+                                                Got it, thanks!
+                                            </button>
+                                        </div> -->
+                                    </DialogPanel>
+                                </TransitionChild>
+                            </div>
+                        </div>
+                    </Dialog>
+                </TransitionRoot>
                 <div dir="rtl" class="hidden cursor-pointer lg:flex lg:flex-1 lg:justify-start">
                     <a v-if="userStore.userToken == null" @click="open = true"
                         class="text-base font-black leading-6 text-[#000000]">ورود/ثبت نام
@@ -177,6 +220,7 @@ import { ref } from 'vue'
 import {
     Dialog,
     DialogPanel,
+    DialogTitle,
     Disclosure,
     DisclosureButton,
     DisclosurePanel,
@@ -184,6 +228,7 @@ import {
     PopoverButton,
     PopoverGroup,
     TransitionRoot,
+    TransitionChild,
     PopoverPanel, Menu, MenuButton, MenuItems, MenuItem
 } from '@headlessui/vue'
 import {
@@ -217,6 +262,15 @@ const selectedLang = ref({ name: 'فارسی', src: null })
 function selectItem(label) {
     selectedLabel.value = label
     selectedLang.value = lang.find((item) => item.name === label)
+}
+
+const isOpen = ref(false)
+
+function closeModal() {
+    isOpen.value = false
+}
+function openModal() {
+    isOpen.value = true
 }
 
 const userStore = useUserStore()
