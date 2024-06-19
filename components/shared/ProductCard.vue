@@ -1,5 +1,5 @@
 <template>
-    <div class=" bg-white rounded-3xl w-[290px] h-[378.8px] shadow-3">
+    <div class=" bg-white rounded-3xl w-[250px] h-[378.8px] shadow-3 lg:w-[290px] md:w-[290px]">
         <div>
             <img class=" w-full h-[150px] object-cover rounded-t-3xl bg-cover bg-center contain "
                 :src="data.image[0].photo" alt="">
@@ -14,17 +14,20 @@
                     <div class=" relative top-3 flex flex-col">
 
                         <p class=" text-xl font-semibold ">
+
+                            {{ data.price - (data.price * data.discount / 100) }}
+                            <span class="text-sm font-light text-gray-400">تومان</span>
+                        </p>
+                        <div class="flex items-center mt-2">
+                            <p class=" line-through  text-sm  text-gray-500">
+
+                                {{ data.price }}
+                            </p>
                             <span
-                                class=" w-3 h-1 rounded-3xl bg-red-600 text-white font-semibold text-base px-1 py-[1px] relative bottom-[2px] left-[5px]">{{
+                                class=" rounded-3xl bg-red-600 text-white  text-xs h-6 w-6 flex justify-center items-center   pt-1  mr-3">{{
                     data.discount
                 }}%</span>
-                            {{ data.price - (data.price * data.discount / 100) }}
-                            <span class="text-sm  text-gray-400">تومان</span>
-                        </p>
-                        <p class=" relative top-3 text-xl font-medium text-gray-300">
-                            <hr class="line bg-gray-400">
-                            {{ data.price }}
-                        </p>
+                        </div>
                     </div>
                     <nuxt-link tag="button" :to="'/shop/' + data.id"
                         class=" bg-[#8b4513] text-white text-sm py-2 px-6 rounded-2xl inline-flex items-center">

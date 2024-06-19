@@ -96,7 +96,7 @@
                                     <h3>
                                         <DisclosureButton @click="open = !open"
                                             class="group relative flex w-full items-center justify-between py-6 ">
-                                            <span class=" text-gray-900">{{ product.Specification }} مشخصات</span>
+                                            <span class=" text-gray-900">مشخصات</span>
                                             <span class="ml-6 flex items-center">
                                                 <IconPlus v-if="open"
                                                     class="block h-6 w-6 text-gray-400 group-hover:text-gray-500"
@@ -108,18 +108,22 @@
                                         </DisclosureButton>
                                     </h3>
                                     <DisclosurePanel as="div" class="prose prose-sm pb-6">
-                                        <div v-if="!open" class=" w-full grow">
-                                            <div class="w-full flex">
-                                                <p
-                                                    class=" ml-[70px] mr-[27px] text-base text-neutral-500 py-2 shrink-0">
-                                                    ابعاد</p>
-                                                <div class=" border-b py-2 grow">
-                                                    <p class="flex items-center w-full text-base text-neutral-900">1000
-                                                        * 500
-                                                        متر مربع</p>
+
+                                        <Transition>
+
+
+                                            <div v-if="!open" class=" w-full grow">
+                                                <div v-for="item in product.Specification" class="w-full flex">
+                                                    <p
+                                                        class="w-[59.49px] ml-[70px] mr-[27px] text-base text-neutral-500 py-2 shrink-0">
+                                                        {{ item.title }}</p>
+                                                    <div class=" border-b py-2 grow">
+                                                        <p class="flex items-center w-full text-base text-neutral-900">
+                                                            {{ item.body }}</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </Transition>
                                     </DisclosurePanel>
                                 </Disclosure>
                             </div>
@@ -180,3 +184,15 @@ export default {
     }
 }
 </script>
+
+<style>
+.v-enter-active,
+.v-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+}
+</style>

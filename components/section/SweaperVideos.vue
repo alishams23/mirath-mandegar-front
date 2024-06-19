@@ -1,5 +1,5 @@
 <template>
-    <div class=" mx-10 my-10 rounded-[50px]  bg-[#fef0e4]  opacity-100 ">
+    <div class=" mx-[15px] my-10 rounded-[50px]  bg-[#fef0e4]  opacity-100 lg:mx-10">
         <div class=" relative top-[40px] flex items-center justify-end">
             <h2 class=" text-xl font-black text-[#8b4513] my-3 mr-4  ">ویدیو ها</h2>
             <div class="h-12 w-12 bg-white flex justify-center items-center  mr-10 rounded-2xl">

@@ -10,7 +10,8 @@
                         <img class="h-10 w-auto" src="/images/logo.png" alt="" />
                     </nuxt-link>
                 </div>
-                <div class="flex lg:hidden">
+                <div
+                    class="flex ml-12 relative left-5 text-black lg:hidden lg:ml-0 lg:left-0 md:hidden md:ml-0 md:left-0">
                     <button type="button"
                         class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-[#caba8f]"
                         @click="mobileMenuOpen = true">
@@ -18,7 +19,7 @@
                         <Bars3Icon class="h-10 w-10" aria-hidden="true" />
                     </button>
                 </div>
-                <PopoverGroup class="hidden lg:flex lg:gap-x-12">
+                <PopoverGroup class="hidden lg:flex lg:gap-x-12 md:flex md:gap-x-12">
                     <Popover class="relative">
                         <PopoverButton dir="rtl"
                             class="flex items-center gap-x-1 focus:ring-1 focus:border-black ring-transparent ring-inset text-base font-semibold leading-6 text-[#f9f2d7]">
@@ -67,89 +68,91 @@
                     <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#f9f2d7]"> مکان ها</a>
 
                     <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#f9f2d7]">محصولات</a>
+                    <div class=" ">
+                        <Menu as="div" class="relative inline-block text-left">
+                            <div>
+                                <MenuButton
+                                    class="inline-flex w-full justify-center items-center rounded-md bg-transparent       text-base font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
+                                    <img v-if="selectedLang.src !== null" :src="selectedLang.src" alt="زبان انتخابی"
+                                        class=" h-3 mr-2 mb-1" />
+                                    {{ selectedLabel || ' فارسی' }}
+                                    <ChevronDownIcon class="-mr-1 ml-2 h-5 w-5 text-violet-200 hover:text-violet-100"
+                                        aria-hidden="true" />
+                                </MenuButton>
+                            </div>
 
-
-                </PopoverGroup>
-                <div class=" absolute top-[17px] right-[40px] w-56 ">
-                    <Menu as="div" class="relative inline-block text-left">
-                        <div>
-                            <MenuButton
-                                class="inline-flex w-full justify-center rounded-md bg-transparent px-4 py-2 text-base font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
-                                <img v-if="selectedLang.src !== null" :src="selectedLang.src" alt="زبان انتخابی"
-                                    class="w-6 h-6 mr-2" />
-                                {{ selectedLabel || 'زبان سایت' }}
-                                <ChevronDownIcon class="-mr-1 ml-2 h-5 w-5 text-violet-200 hover:text-violet-100"
-                                    aria-hidden="true" />
-                            </MenuButton>
-                        </div>
-
-                        <transition enter-active-class="transition duration-100 ease-out"
-                            enter-from-class="transform scale-95 opacity-0"
-                            enter-to-class="transform scale-100 opacity-100"
-                            leave-active-class="transition duration-75 ease-in"
-                            leave-from-class="transform scale-100 opacity-100"
-                            leave-to-class="transform scale-95 opacity-0">
-                            <MenuItems
-                                class="absolute right-0 mt-2 w-32 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
-                                <div class="px-1 py-1">
-                                    <MenuItem v-for="item in lang" v-slot="{ active }">
-                                    <button :class="[
+                            <transition enter-active-class="transition duration-100 ease-out"
+                                enter-from-class="transform scale-95 opacity-0"
+                                enter-to-class="transform scale-100 opacity-100"
+                                leave-active-class="transition duration-75 ease-in"
+                                leave-from-class="transform scale-100 opacity-100"
+                                leave-to-class="transform scale-95 opacity-0">
+                                <MenuItems
+                                    class="absolute right-0 mt-2 w-32 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
+                                    <div class="px-1 py-1">
+                                        <MenuItem v-for="item, index in lang" v-slot="{ active }">
+                                        <button :class="[
                             active ? 'bg-gray-200 text-black' : 'text-gray-900',
                             'group flex w-full items-center justify-center rounded-md px-2 py-2 text-sm',
-                        ]" @click="selectItem(item.name); openModal()">
-                                        <img :src="item.src" class=" w-7 h-7 object-cover mr-2">
-                                        <span class=" text-base font-semibold">{{ item.name }}</span>
-                                    </button>
-                                    </MenuItem>
-                                </div>
-                            </MenuItems>
-                        </transition>
-                    </Menu>
-                </div>
-                <TransitionRoot appear :show="isOpen" as="template">
-                    <Dialog as="div" @close="closeModal" class="relative z-10">
-                        <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0"
-                            enter-to="opacity-100" leave="duration-200 ease-in" leave-from="opacity-100"
-                            leave-to="opacity-0">
-                            <div class="fixed inset-0 bg-black/25" />
-                        </TransitionChild>
+                        ]" @click=" index == 1 ? openModal() : ''">
+                                            <img :src="item.src" class="  h-3 object-cover mr-2">
+                                            <span class=" text-base font-semibold">{{ item.name }}</span>
+                                        </button>
+                                        </MenuItem>
+                                    </div>
+                                </MenuItems>
+                            </transition>
+                        </Menu>
+                    </div>
+                    <TransitionRoot appear :show="isOpen" as="template">
+                        <Dialog as="div" @close="closeModal" class="relative z-10">
+                            <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0"
+                                enter-to="opacity-100" leave="duration-200 ease-in" leave-from="opacity-100"
+                                leave-to="opacity-0">
+                                <div class="fixed inset-0 bg-black/25" />
+                            </TransitionChild>
 
-                        <div class="fixed inset-0 overflow-y-auto">
-                            <div class="flex min-h-full items-center justify-center p-4 text-center">
-                                <TransitionChild as="template" enter="duration-300 ease-out"
-                                    enter-from="opacity-0 scale-95" enter-to="opacity-100 scale-100"
-                                    leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
-                                    leave-to="opacity-0 scale-95">
-                                    <DialogPanel
-                                        class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                                        <div class="mt-2 flex justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                                class="w-14 h-w-14 animate-spin" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                                                <path fill-rule="evenodd"
-                                                    d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                                            </svg>
-                                        </div>
-                                        <DialogTitle as="h3"
-                                            class="text-lg text-center font-medium mt-6 leading-6 text-gray-900">
-                                            درحال اپدیت
-                                        </DialogTitle>
+                            <div class="fixed inset-0 overflow-y-auto">
+                                <div class="flex min-h-full items-center justify-center p-4 text-center">
+                                    <TransitionChild as="template" enter="duration-300 ease-out"
+                                        enter-from="opacity-0 scale-95" enter-to="opacity-100 scale-100"
+                                        leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
+                                        leave-to="opacity-0 scale-95">
+                                        <DialogPanel
+                                            class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                                            <div class="mt-2 flex justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                    class="w-14 h-w-14 animate-spin" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                                                </svg>
+                                            </div>
+                                            <DialogTitle as="h3"
+                                                class="text-lg text-center font-medium mt-6 leading-6 text-gray-900">
+                                                درحال اپدیت
+                                            </DialogTitle>
 
-                                        <!-- <div class="mt-4">
+                                            <!-- <div class="mt-4">
                                             <button type="button"
                                                 class="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                                                 @click="closeModal">
                                                 Got it, thanks!
                                             </button>
                                         </div> -->
-                                    </DialogPanel>
-                                </TransitionChild>
+                                        </DialogPanel>
+                                    </TransitionChild>
+                                </div>
                             </div>
-                        </div>
-                    </Dialog>
-                </TransitionRoot>
-                <div dir="rtl" class="hidden cursor-pointer lg:flex lg:flex-1 lg:justify-start">
+                        </Dialog>
+                    </TransitionRoot>
+
+
+                </PopoverGroup>
+
+                <div dir="rtl"
+                    class="hidden cursor-pointer lg:flex lg:flex-1 lg:justify-start md:flex md:justify-start">
                     <a v-if="userStore.userToken == null" @click="open = true"
                         class="text-base font-black leading-6 text-[#000000]">ورود/ثبت نام
                     </a>
@@ -165,7 +168,7 @@
                 </div>
             </nav>
             <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
-                <div class="fixed inset-0 z-10" />
+                <div class="fixed inset-0 z-30" />
                 <DialogPanel
                     class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div class="flex items-center justify-between">
@@ -263,7 +266,7 @@ function selectItem(label) {
     selectedLabel.value = label
     selectedLang.value = lang.find((item) => item.name === label)
 }
-
+selectItem("فارسی")
 const isOpen = ref(false)
 
 function closeModal() {

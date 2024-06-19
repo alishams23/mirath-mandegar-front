@@ -1,5 +1,8 @@
 <template>
-    <div class=" grid place-items-center bg-gray-300 h-screen">
+    <div class="bg-[#002820] py-40 w-full ">
+
+    </div>
+    <div class=" grid place-items-center bg-gray-300">
         <div class="w-[550px] rounded-xl overflow-hidden shadow-lg bg-white p-6">
             <div class="flex items-center">
                 <img class="w-32 h-32 rounded-full mr-6 object-cover"

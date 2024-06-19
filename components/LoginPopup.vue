@@ -79,7 +79,7 @@
                                 کد را وارد کنید</h2>
                         </div>
                         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                            <form class="space-y-6" >
+                            <form class="space-y-6">
                                 <div class="ltr">
                                     <div class="relative mt-2 rounded-full shadow-sm">
                                         <input type="text" placeholder="code" v-model="code" name="phone-number"
@@ -390,7 +390,7 @@ export default {
         sendLoginSms() {
             // Ensure the phone number is not empty
             if (this.phoneNumber) {
-                const apiUrl = `${apiStore().address}api/account/login-sms/${this.phoneNumber }/`;
+                const apiUrl = `${apiStore().address}api/account/login-sms/${this.phoneNumber}/`;
                 const data = {
                     number: this.phoneNumber // Assuming the API expects the full number with country code
                 };
@@ -409,21 +409,21 @@ export default {
                         this.cooldownTime = 120; // Reset to 2 minutes
                         clearInterval(this.cooldownInterval);
                         this.isCooldownActive = true;
-                        this.error= null;
+                        this.error = null;
                         this.startCoolDown();
-                       
+
                     })
                     .catch(error => {
                         // Handle error response
                         this.error = 'کاربری با این شماره وجود ندارد'
                         this.loading = false
                         console.error('Error sending SMS:', error);
-                    
+
                     });
             } else {
                 // Phone number is empty, handle accordingly
                 console.error('Phone number is empty');
-               
+
             }
         },
         check_code() {
@@ -464,12 +464,12 @@ export default {
         }
     },
 
-    watch: {
-        // Watcher to update phoneNumber based on the input field value
-        'phoneNumber'(newVal) {
-            this.phoneNumber = newVal;
-        }
-    }
+    // watch: {
+    //     // Watcher to update phoneNumber based on the input field value
+    //     'phoneNumber'(newVal) {
+    //         this.phoneNumber = newVal;
+    //     }
+    // }
 
 }
 </script>

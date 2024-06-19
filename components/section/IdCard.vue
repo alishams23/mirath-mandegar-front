@@ -2,7 +2,7 @@
   <div class="bg-white">
     <div class="mx-auto grid grid-cols-4 gap-4  sm:px-6  lg:px-8">
 
-      <div class=" bg-gray-200 rounded-s-[50px] rounded-e-xl px-5">
+      <div class=" bg-gray-200 rounded-s-[50px] rounded-e-xl px-5 hidden lg:block md:block">
         <div class="flex justify-center">
           <div class="h-24 w-24 mt-5 bg-gray-300 rounded-full ">
 
@@ -14,7 +14,8 @@
         </div>
 
       </div>
-      <div class=" col-span-3 bg-[#fef0e4]  px-6 py-10  text-center  sm:rounded-e-[50px] rounded-s-xl  sm:px-16">
+      <div
+        class=" col-span-4 md:col-span-3 lg:col-span-3 bg-[#fef0e4]  px-6 py-10  text-center rounded-xl lg:rounded-e-[50px] lg:rounded-s-xl md:rounded-e-[50px] md:rounded-s-xl  sm:px-16">
         <h2 class="mx-auto max-w-2xl text-md font-bold tracking-tight text-[#4f2d14] sm:text-2xl">کارت عضویت خود را
           دریافت کنید</h2>
         <p class="mx-auto mt-5 max-w-xl text-sm leading-8 text-[#4f2d1490]">لورم ایپسوم متن ساختگی با تولید سادگی
