@@ -2,7 +2,7 @@
 
 
 
-    <div class="relative mb-[30px] rounded-3xl overflow-hidden w-[230px] h-[250px]">
+    <div class="relative mb-[30px] rounded-3xl overflow-hidden w-[210px] h-[250px] lg:w-[230px] md:w-[230px]">
 
         <img class="w-full h-full object-cover" :src="data.image" alt="Thumbnail">
 

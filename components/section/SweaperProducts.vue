@@ -7,8 +7,15 @@
             </div>
         </div>
 
-        <swiper :modules="modules" :slides-per-view="'auto'" :space-between="10" :loop="false">
-            <swiper-slide v-for="item in products" class="mb-9 ">
+        <swiper :modules="modules" :slides-per-view="'auto'" :space-between="10" :loop="false"
+            class=" flex justify-center">
+            <div v-if="loading" class='flex space-x-1 justify-center items-center bg-white h-[378.8px]'>
+                <span class='sr-only'>Loading...</span>
+                <div class='h-5 w-5 bg-[#8b4513] rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+                <div class='h-5 w-5 bg-[#8b4513] rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+                <div class='h-5 w-5 bg-[#8b4513] rounded-full animate-bounce'></div>
+            </div>
+            <swiper-slide v-else v-for="item in products" class="mb-9 ">
                 <div class=" rounded-3xl flex justify-center items-center  mx-5">
                     <ProductCard :data="item" />
                 </div>

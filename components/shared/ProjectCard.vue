@@ -1,5 +1,6 @@
 <template>
-    <div class="bg-white shadow-1 pr-2 w-[400px] h-[180px] rounded-3xl flex items-center justify-start space-x-4">
+    <div
+        class="bg-white shadow-1 pr-2 w-[350px] h-[180px] rounded-3xl flex items-center justify-start space-x-4 lg:w-[400px] md:w-[400px]">
         <div class=" w-[190px] h-full mr-5 flex-shrink-0 ">
             <!-- Image goes here -->
             <img class="h-full w-full object-cover bg-cover rounded-l-3xl" :src="data.photos[0].address"

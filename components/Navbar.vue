@@ -10,7 +10,8 @@
                         <img class="h-10 w-auto" src="/images/logo.png" alt="" />
                     </nuxt-link>
                 </div>
-                <div class="flex lg:hidden">
+                <div
+                    class="flex ml-12 relative left-5 text-black lg:hidden lg:ml-0 lg:left-0 md:hidden md:ml-0 md:left-0">
                     <button type="button"
                         class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-[#caba8f]"
                         @click="mobileMenuOpen = true">
@@ -18,7 +19,7 @@
                         <Bars3Icon class="h-10 w-10" aria-hidden="true" />
                     </button>
                 </div>
-                <PopoverGroup class="hidden lg:flex lg:gap-x-12">
+                <PopoverGroup class="hidden lg:flex lg:gap-x-12 md:flex md:gap-x-12">
                     <Popover class="relative">
                         <PopoverButton dir="rtl"
                             class="flex items-center gap-x-1 focus:ring-1 focus:border-black ring-transparent ring-inset text-base font-semibold leading-6 text-[#f9f2d7]">
@@ -67,37 +68,93 @@
                     <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#f9f2d7]"> مکان ها</a>
 
                     <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#f9f2d7]">محصولات</a>
+                    <div class=" ">
+                        <Menu as="div" class="relative inline-block text-left">
+                            <div>
+                                <MenuButton
+                                    class="inline-flex w-full justify-center items-center rounded-md bg-transparent       text-base font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
+                                    <img v-if="selectedLang.src !== null" :src="selectedLang.src" alt="زبان انتخابی"
+                                        class=" h-3 mr-2 mb-1" />
+                                    {{ selectedLabel || ' فارسی' }}
+                                    <ChevronDownIcon class="-mr-1 ml-2 h-5 w-5 text-violet-200 hover:text-violet-100"
+                                        aria-hidden="true" />
+                                </MenuButton>
+                            </div>
+
+                            <transition enter-active-class="transition duration-100 ease-out"
+                                enter-from-class="transform scale-95 opacity-0"
+                                enter-to-class="transform scale-100 opacity-100"
+                                leave-active-class="transition duration-75 ease-in"
+                                leave-from-class="transform scale-100 opacity-100"
+                                leave-to-class="transform scale-95 opacity-0">
+                                <MenuItems
+                                    class="absolute right-0 mt-2 w-32 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
+                                    <div class="px-1 py-1">
+                                        <MenuItem v-for="item, index in lang" v-slot="{ active }">
+                                        <button :class="[
+                            active ? 'bg-gray-200 text-black' : 'text-gray-900',
+                            'group flex w-full items-center justify-center rounded-md px-2 py-2 text-sm',
+                        ]" @click=" index == 1 ? openModal() : ''">
+                                            <img :src="item.src" class="  h-3 object-cover mr-2">
+                                            <span class=" text-base font-semibold">{{ item.name }}</span>
+                                        </button>
+                                        </MenuItem>
+                                    </div>
+                                </MenuItems>
+                            </transition>
+                        </Menu>
+                    </div>
+                    <TransitionRoot appear :show="isOpen" as="template">
+                        <Dialog as="div" @close="closeModal" class="relative z-10">
+                            <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0"
+                                enter-to="opacity-100" leave="duration-200 ease-in" leave-from="opacity-100"
+                                leave-to="opacity-0">
+                                <div class="fixed inset-0 bg-black/25" />
+                            </TransitionChild>
+
+                            <div class="fixed inset-0 overflow-y-auto">
+                                <div class="flex min-h-full items-center justify-center p-4 text-center">
+                                    <TransitionChild as="template" enter="duration-300 ease-out"
+                                        enter-from="opacity-0 scale-95" enter-to="opacity-100 scale-100"
+                                        leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
+                                        leave-to="opacity-0 scale-95">
+                                        <DialogPanel
+                                            class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                                            <div class="mt-2 flex justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                    class="w-14 h-w-14 animate-spin" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                                                </svg>
+                                            </div>
+                                            <DialogTitle as="h3"
+                                                class="text-lg text-center font-medium mt-6 leading-6 text-gray-900">
+                                                درحال اپدیت
+                                            </DialogTitle>
+
+                                            <!-- <div class="mt-4">
+                                            <button type="button"
+                                                class="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                                                @click="closeModal">
+                                                Got it, thanks!
+                                            </button>
+                                        </div> -->
+                                        </DialogPanel>
+                                    </TransitionChild>
+                                </div>
+                            </div>
+                        </Dialog>
+                    </TransitionRoot>
 
 
                 </PopoverGroup>
-                <div class="relative left-[40px] top-[1px]">
-                    <button @click="toggleDropdown"
-                        class="px-4 py-2 bg-transparent text-white rounded-md flex items-center justify-between">
-                        <img :src="selectedLanguage.flag" alt="" class="w-5 h-5 mr-2">
-                        {{ selectedLanguage.name }}
-                        <svg :class="{ 'transform rotate-180': dropdownOpen }" class="w-4 h-4 ml-2"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                    <transition name="dropdown" @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter"
-                        @before-leave="beforeLeave" @leave="leave">
-                        <div v-show="dropdownOpen"
-                            class="absolute mt-1 w-full rounded-md bg-white shadow-lg z-10 transition-all duration-300 ease-in-out">
-                            <ul class="py-1">
-                                <li v-for="language in languages" :key="language.code" @click="selectLanguage(language)"
-                                    class="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer">
-                                    <img :src="language.flag" alt="" class="w-5 h-5 mr-2">
-                                    {{ language.name }}
-                                </li>
-                            </ul>
-                        </div>
-                    </transition>
-                </div>
-                <div dir="rtl" class="hidden cursor-pointer lg:flex lg:flex-1 lg:justify-start">
-                    <a v-if="userStore.userToken == null" @click="open = true" class="text-base font-black leading-6 text-[#000000]">ورود/ثبت نام
+
+                <div dir="rtl"
+                    class="hidden cursor-pointer lg:flex lg:flex-1 lg:justify-start md:flex md:justify-start">
+                    <a v-if="userStore.userToken == null" @click="open = true"
+                        class="text-base font-black leading-6 text-[#000000]">ورود/ثبت نام
                     </a>
                     <a v-else @click="userStore.logout()" class="text-base font-black leading-6 text-[#000000]">خروج
                     </a>
@@ -111,7 +168,7 @@
                 </div>
             </nav>
             <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
-                <div class="fixed inset-0 z-10" />
+                <div class="fixed inset-0 z-30" />
                 <DialogPanel
                     class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div class="flex items-center justify-between">
@@ -166,6 +223,7 @@ import { ref } from 'vue'
 import {
     Dialog,
     DialogPanel,
+    DialogTitle,
     Disclosure,
     DisclosureButton,
     DisclosurePanel,
@@ -173,7 +231,8 @@ import {
     PopoverButton,
     PopoverGroup,
     TransitionRoot,
-    PopoverPanel,
+    TransitionChild,
+    PopoverPanel, Menu, MenuButton, MenuItems, MenuItem
 } from '@headlessui/vue'
 import {
     Bars3Icon,
@@ -186,6 +245,8 @@ import { useUserStore } from '~/store/user';
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid'
 import { IconChessKnightFilled } from '@tabler/icons-vue'
 
+
+
 const products = [
     { name: 'ایتم اول', description: 'توضیحات', href: '#', icon: ChartPieIcon },
     { name: 'ایتم دوم', description: 'توضیحات', href: '#', icon: CursorArrowRaysIcon },
@@ -194,67 +255,30 @@ const callsToAction = [
     { name: 'اینستاگرام', href: '#', icon: PlayCircleIcon },
     { name: ' تماس با ما ', href: '#', icon: PhoneIcon },
 ]
-const dropdownOpen = ref(false)
-const languages = ref([
-   
-    { name: 'فارسی', flag: 'https://th.bing.com/th/id/R.ee0f24ea55971e8a658a74dae15f1bc5?rik=1bgkmVoTlCYeHg&pid=ImgRaw&r=0', code: 'es' },
-    { name: 'English', flag: 'https://th.bing.com/th/id/OIP.U-h9wYdOSH047roWjY_1TgAAAA?rs=1&pid=ImgDetMain', code: 'en' },
+const lang = [
+    { name: 'فارسی', src: 'https://th.bing.com/th/id/R.e8bac5cf97b9a7f4c847d02a46fa10a5?rik=bRXeTXg7O%2bVnmg&pid=ImgRaw&r=0' },
+    { name: 'English', src: 'https://th.bing.com/th/id/OIP.e_bbO_MwobphE7AiIzUzyQHaEA?rs=1&pid=ImgDetMain' }
+]
 
-])
+const selectedLabel = ref(null)
+const selectedLang = ref({ name: 'فارسی', src: null })
+function selectItem(label) {
+    selectedLabel.value = label
+    selectedLang.value = lang.find((item) => item.name === label)
+}
+selectItem("فارسی")
+const isOpen = ref(false)
+
+function closeModal() {
+    isOpen.value = false
+}
+function openModal() {
+    isOpen.value = true
+}
 
 const userStore = useUserStore()
 
-const selectedLanguage = ref(languages.value[0])
 
-function toggleDropdown() {
-    dropdownOpen.value = !dropdownOpen.value
-}
-
-function selectLanguage(language) {
-    selectedLanguage.value = language
-    dropdownOpen.value = false
-}
-
-function beforeEnter(el) {
-    el.style.opacity = '0'
-    el.style.maxHeight = '0'
-}
-
-function enter(el, done) {
-    setTimeout(() => {
-        el.style.maxHeight = el.scrollHeight + 'px'
-        el.style.opacity = '1'
-        done()
-    }, 10)
-}
-
-function afterEnter(el) {
-    el.style.maxHeight = null
-}
-
-function beforeLeave(el) {
-    el.style.maxHeight = el.scrollHeight + 'px'
-}
-
-function leave(el, done) {
-    setTimeout(() => {
-        el.style.maxHeight = '0'
-        el.style.opacity = '0'
-        done()
-    }, 10)
-}
 const mobileMenuOpen = ref(false)
 const open = ref(false)
 </script>
-<style scoped>
-.dropdown-enter-active,
-.dropdown-leave-active {
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-}
-
-.dropdown-enter-from,
-.dropdown-leave-to {
-    max-height: 0;
-    opacity: 0;
-}
-</style>
