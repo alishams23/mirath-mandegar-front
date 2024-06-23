@@ -9,8 +9,8 @@
           </div>
         </div>
         <div class="flex-grow flex flex-col mt-6">
-          <div class="flex-grow  h-3 bg-gray-100 rounded-xl mx-4 mt-5"></div>
-          <div class="flex-grow h-3 bg-gray-100 rounded-xl mx-4 mt-5"></div>
+          <div class="flex-grow  h-3 bg-gray-100 rounded-sm mx-4 mt-5"></div>
+          <div class="flex-grow h-3 bg-gray-100 rounded-sm mx-4 mt-5"></div>
         </div>
 
       </div>
