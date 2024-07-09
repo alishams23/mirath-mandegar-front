@@ -39,7 +39,7 @@
 
             </main>
             <aside
-                class=" hidden md:grid lg:grid shadow-2 col-start-6 col-span-2 row-start-1 row-span-6 rounded-3xl bg-white">
+                class=" hidden md:grid lg:grid shadow-2 col-start-6 col-span-2 row-start-1 row-span-4 rounded-3xl bg-white">
                 <div v-if="loading"
                     class='flex space-x-1 justify-center items-center bg-white w-full h-[396px] rounded-3xl'>
                     <span class='sr-only'>Loading...</span>
@@ -47,18 +47,13 @@
                     <div class='h-5 w-5 bg-[#8b4513] rounded-full animate-bounce [animation-delay:-0.15s]'></div>
                     <div class='h-5 w-5 bg-[#8b4513] rounded-full animate-bounce'></div>
                 </div>
-                <div v-else>
-                    <div v-if="blog !== null">
-                        <div class="overflow-y-auto py-4 px-3">
-                            <ul class="space-y-2">
-                                <li class=" pl-5 text-right">
-                                    <p> {{ blog.author.username }} <span
-                                            class=" text-gray-800 text-xl font-semibold">:نویسنده</span>
-                                    </p>
-                                </li>
-                            </ul>
+                <div v-else class="">
+                    <div class="flex  flex-wrap m-4 ">
+                        <div v-for="item in 5"  class="mx-1 px-3 py-2 bg-[#faece0] border border-[#ffdac0] rounded-full text-xs my-2">
+                           دسته بندی {{ item }}
                         </div>
                     </div>
+                   <div class="text-sm m-4  mt-9 text-right">تاریخ انتشار: ۳ تیر ۱۴۰۳</div>
                 </div>
             </aside>
         </div>

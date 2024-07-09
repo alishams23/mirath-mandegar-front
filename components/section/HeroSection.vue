@@ -56,7 +56,7 @@
           </div>
         </div>
         <div class="bg-gray-50 lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
-          <img class="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full" src="" alt="" />
+          <img class="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full" src="/images/banner2.jpg" alt="" />
         </div>
       </div>
     </div>

@@ -2,10 +2,10 @@
     <div class="bg-white ">
    
   
-      <div class="relative isolate overflow-hidden rounded-b-[80px]">
+      <div class="relative isolate overflow-hidden ">
         
         <img src="/images/banner.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
-        <div class="absolute inset-0 -z-10 bg-[#3b2f15]/80 w-full h-full"></div>
+        <div class="absolute inset-0 -z-10 bg-gradient-to-b from-[#3b2f15]/10   from-70% to-[#3d2b21]   bg-[#3b2f15]/80 w-full h-full"></div>
         <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
           <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" />
         </div>
@@ -36,10 +36,10 @@
                                         </svg>
                                     </div>
                                     <input type="search" id="default-search"
-                                        class="block w-full p-4 ps-10 placeholder:text-[#e4d2c0] text-sm text-[#FFCD9B]  rounded-3xl bg-gradient-to-tr bg-[#1b376b] from-[#112f7d]    to-[#0a49be] "
+                                        class="block w-full p-4 ps-10 placeholder:text-[#e4d2c0] text-sm text-[#FFCD9B]  rounded-3xl bg-gradient-to-tr  border-t border-blue-50/20   bg-[#0a49be]/40 backdrop-blur-sm"
                                         placeholder="جستجو میان ایتم های سایت" required />
                                     <button type="submit"
-                                        class="text-[#f8ffff] absolute end-2.5 shadow-2xl bottom-2 bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-2xl text-sm px-5 py-[10px]">جستجو</button>
+                                        class="text-[#f8ffff] absolute end-2.5 shadow-2xl bottom-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-2xl text-sm px-5 py-[10px]">جستجو</button>
                                 </div>
                             </form>
           </div>

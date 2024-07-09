@@ -31,8 +31,8 @@
                         <p class="text-gray-600 mb-4">{{ building.location }}</p>
 
                         <div class="flex justify-between items-center mb-2 mt-5">
-                            <button class="bg-[#8b4513] text-white font-bold px-5 py-2 rounded-2xl ">اطلاعات
-                                بیشتر</button>
+                            <!-- <button class="bg-[#8b4513] text-white font-bold px-5 py-2 rounded-2xl ">اطلاعات
+                                بیشتر</button> -->
                         </div>
                         <div class="grid grid-cols-3 gap-x-4 p-4">
                             <div v-for="(image, index ) in building.photos">
