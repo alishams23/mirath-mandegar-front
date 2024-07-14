@@ -1,5 +1,5 @@
 <template>
-    <SectionHeroSection />
+    <SectionHeroSection3 />
     <!-- <main dir="rtl" class="  bg-gradient-to-tl from-[#01231d] to-[#033f33] isolate rounded-br-[200px]">
         <div class="relative isolate -z-10">
             <div class="overflow-hidden">
