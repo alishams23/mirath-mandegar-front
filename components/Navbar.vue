@@ -16,7 +16,7 @@
                         class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-[#caba8f]"
                         @click="mobileMenuOpen = true">
                         <span class="sr-only">Open main menu</span>
-                        <Bars3Icon class="h-10 w-10" aria-hidden="true" />
+                        <Bars3Icon class="h-10 w-10 text-black" aria-hidden="true" />
                     </button>
                 </div>
                 <PopoverGroup class="hidden lg:flex lg:gap-x-12 md:flex md:gap-x-12">
@@ -121,7 +121,7 @@
                                         <DialogPanel
                                             class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                                             <div class="mt-2 flex justify-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="black"
                                                     class="w-14 h-w-14 animate-spin" viewBox="0 0 16 16">
                                                     <path
                                                         d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
