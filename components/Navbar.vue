@@ -2,8 +2,8 @@
 
     <div class="bg-[#002820] flex justify-center">
         <header
-            class=" fixed z-[999999] lg:w-2/3 bg-gradient-to-b from-[#e9a467] to-[#ba814f] md:w-full xs:w-full rounded-b-[50px] rounded-t-[10px] mt-0 px-8 ">
-            <nav class="mx-auto h-[70px] flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+            class=" fixed z-[999999] lg:w-2/3 bg-gradient-to-b from-[#f5c295] to-[#ca9669] md:w-full xs:w-full rounded-b-[40px] rounded-t-[7px] mt-0 px-8 ">
+            <nav class="mx-auto h-[65px] flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div class="flex lg:flex-1">
                     <nuxt-link to="/" class="-m-1.5 p-1.5">
                         <span class="sr-only">Your Company</span>
@@ -16,15 +16,15 @@
                         class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-[#caba8f]"
                         @click="mobileMenuOpen = true">
                         <span class="sr-only">Open main menu</span>
-                        <Bars3Icon class="h-10 w-10" aria-hidden="true" />
+                        <Bars3Icon class="h-10 w-10 text-black" aria-hidden="true" />
                     </button>
                 </div>
                 <PopoverGroup class="hidden lg:flex lg:gap-x-12 md:flex md:gap-x-12">
                     <Popover class="relative">
                         <PopoverButton dir="rtl"
-                            class="flex items-center gap-x-1 focus:ring-1 focus:border-black ring-transparent ring-inset text-base font-semibold leading-6 text-[#f9f2d7]">
+                            class="flex items-center gap-x-1 focus:ring-1 focus:border-black ring-transparent ring-inset text-base font-semibold leading-6 text-black">
                             مقالات
-                            <ChevronDownIcon class="h-5 w-5 flex-none text-[#f9f2d7]" aria-hidden="true" />
+                            <ChevronDownIcon class="h-5 w-5 flex-none text-black" aria-hidden="true" />
                         </PopoverButton>
 
                         <transition enter-active-class="transition ease-out duration-200"
@@ -64,15 +64,15 @@
                     </Popover>
 
 
-                    <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#f9f2d7]"> ویدئو ها</a>
-                    <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#f9f2d7]"> مکان ها</a>
+                    <a dir="rtl" href="#" class="text-sm font-semibold leading-6 text-black"> ویدئو ها</a>
+                    <a dir="rtl" href="#" class="text-sm font-semibold leading-6 text-black"> مکان ها</a>
 
-                    <a dir="rtl" href="#" class="text-base font-semibold leading-6 text-[#f9f2d7]">محصولات</a>
+                    <a dir="rtl" href="#" class="text-sm font-semibold leading-6 text-black">محصولات</a>
                     <div class=" ">
                         <Menu as="div" class="relative inline-block text-left">
                             <div>
                                 <MenuButton
-                                    class="inline-flex w-full justify-center items-center rounded-md bg-transparent       text-base font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
+                                    class="inline-flex w-full justify-center items-center rounded-md bg-transparent       text-sm font-medium text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
                                     <img v-if="selectedLang.src !== null" :src="selectedLang.src" alt="زبان انتخابی"
                                         class=" h-3 mr-2 mb-1" />
                                     {{ selectedLabel || ' فارسی' }}
@@ -121,7 +121,7 @@
                                         <DialogPanel
                                             class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                                             <div class="mt-2 flex justify-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="black"
                                                     class="w-14 h-w-14 animate-spin" viewBox="0 0 16 16">
                                                     <path
                                                         d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
@@ -256,7 +256,7 @@ const callsToAction = [
     { name: ' تماس با ما ', href: '#', icon: PhoneIcon },
 ]
 const lang = [
-    { name: 'فارسی', src: 'https://th.bing.com/th/id/R.e8bac5cf97b9a7f4c847d02a46fa10a5?rik=bRXeTXg7O%2bVnmg&pid=ImgRaw&r=0' },
+    { name: 'فارسی', src: './images/iran_flag.png' },
     { name: 'English', src: 'https://th.bing.com/th/id/OIP.e_bbO_MwobphE7AiIzUzyQHaEA?rs=1&pid=ImgDetMain' }
 ]
 

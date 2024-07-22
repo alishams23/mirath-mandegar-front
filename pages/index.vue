@@ -1,5 +1,6 @@
 <template>
     <SectionHeroSection3 />
+    
     <!-- <main dir="rtl" class="  bg-gradient-to-tl from-[#01231d] to-[#033f33] isolate rounded-br-[200px]">
         <div class="relative isolate -z-10">
             <div class="overflow-hidden">
@@ -97,10 +98,13 @@
         </div>
     </main> -->
     <section class="">
-        <SectionSweaperBlogCards />
+        <SectionFeatureSection />
     </section>
     <section>
         <SectionIdCard></SectionIdCard>
+    </section>
+    <section class=" ">
+        <SectionSweaperProducts />
     </section>
     <section class="">
         <SectionSweaperProjects />
@@ -108,10 +112,14 @@
     <section class="">
         <SectionSweaperVideos />
     </section>
-    <section class=" ">
-        <SectionSweaperProducts />
+    <section class="">
+        <SectionSweaperBlogCards />
     </section>
-    <footer class="mt-10 bg-[#002820] ">
+ 
+
+ 
+   
+    <footer class="mt-10 bg-[#173234] ">
         <img src="/images/slimi2.png" class="  w-[200px] mx-auto pt-20 pb-5 sm:pt-24" alt="">
 
         <div class="mx-auto max-w-7xl overflow-hidden px-6 pb-20 sm:pb-24 lg:px-8">
