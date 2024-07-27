@@ -35,7 +35,7 @@
                   </div> -->
               </div>
               <h1 class=" text-3xl font-bold   text-[#225e6a] sm:text-4xl"><span class="text-[#b97a34]">خشت</span> به
-                <span class="text-[#b97a34]">خشت</span> برای بافت تاریخی
+                <span class="text-[#b97a34]">خشت</span> برای بافت تاریخی یزد
               </h1>
 
 
@@ -59,13 +59,10 @@
 
 
 
-              <div class="flex justify-center items-center ">
+              <div class="flex justify-center items-center mt-10">
                 <img src="/images/slimi.png" class="  h-24 mx-5" alt="">
                 <p class="relative pt-10 text-md leading-8 text-[#1f504a] sm:max-w-md lg:max-w-none">
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                  گرافیک
-                  است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط
-
+                  ما فرزندان میراث پایدار در نظر داریم خشت به خشت در راستای حفظ و احیاء بافت‌های تاریخی گام برداریم.
                 </p>
               </div>
 

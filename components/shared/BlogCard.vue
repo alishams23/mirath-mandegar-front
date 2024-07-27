@@ -3,8 +3,8 @@
         <img class="w-full h-[140px] object-cover" :src="data.imageBlog.photo" alt="Sunset in the mountains">
         <div dir="rtl" class="px-6 py-4">
            
-            <h2 class=" text-gray-900 my-2 mt-1 text-md font-semibold">{{ data.title }}</h2>
-            <p class="text-gray-700 text-sm mb-3">
+            <h2 class=" text-gray-900 my-2 mt-1 text-md font-semibold line-clamp-2">{{ data.title }}</h2>
+            <p class="text-gray-700 text-sm mb-3 line-clamp-2">
                 {{ data.body }}
             </p>
             <nuxt-link tag="button" :to="'/blog/' + data.id"

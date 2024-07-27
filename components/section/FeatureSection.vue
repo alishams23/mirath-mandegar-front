@@ -13,10 +13,10 @@
                 </div>
                <div class="text-center"> {{ feature.name }}</div>
               </dt>
-              <dd class="mt-1 flex flex-auto flex-col justify-center text-center text-base leading-7 text-gray-600">
-                <p class="flex-auto">{{ feature.description }}</p>
+              <dd class="mt-1 flex  flex-auto flex-col justify-center text-center text-base leading-7 text-gray-600">
+                <p class="flex-auto " style="direction: rtl;">{{ feature.description }}</p>
                 <p class="mt-6">
-                  <a :href="feature.href" class="text-sm font-semibold leading-6 text-[#175b44]">بیشتر بخوانید <span aria-hidden="true">→</span></a>
+                  <!-- <a :href="feature.href" class="text-sm font-semibold leading-6 text-[#175b44]">بیشتر بخوانید <span aria-hidden="true">→</span></a> -->
                 </p>
               </dd>
             </div>
@@ -31,23 +31,23 @@
   
   const features = [
     {
-      name: 'متن تستی',
+      name: ' احیاء بافت های تاریخی آسیب دیده  ',
       description:
-        'Non quo aperiam repellendus quas est est. Eos aut dolore aut ut sit nesciunt. Ex tempora quia. Sit nobis consequatur dolores incidunt.',
+        ' ما در تلاش برای احیای بافت‌های تاریخی آسیب دیده به منظور حفظ تاریخ و ارزش‌های میراثی شهر خود هستیم. با همت، همدلی و همکاری جامعه، رویای یزد باستانی را زنده خواهیم کرد.',
       href: '#',
       icon: InboxIcon,
     },
     {
-      name: 'متن تستی',
+      name: '  میراث بانان جوان',
       description:
-        'Vero eum voluptatem aliquid nostrum voluptatem. Vitae esse natus. Earum nihil deserunt eos quasi cupiditate. A inventore et molestiae natus.',
+        'ما با همکاری داوطلبین، جامعه محلی، دانشگاه‌ها، سازمان‌های مردم‌نهاد و زندانیان، به دنبال حفظ و احیای بافت‌های تاریخی هستیم. اگر شما نیز تمایل به پیوستن به این تیم دارید، خوشحال می‌شویم با ما همراه باشید .',
       href: '#',
       icon: UsersIcon,
     },
     {
-      name: 'متن تستی',
+      name: 'خشت رهایی',
       description:
-        'Et quod quaerat dolorem quaerat architecto aliquam accusantium. Ex adipisci et doloremque autem quia quam. Quis eos molestiae at iure impedit.',
+        ' با همراهی شما سعی داریم تا با ارتقاء مهارت‌ها و افزایش خودباوری، زندانیان را به رهایی و بازگشت موفق به جامعه کمک کنیم. تمامی عواید حاصل از طرح صرف مخارج خانواده های زندانیان و آزاد سازی زندانیان جرائم غیرعمد خواهد شد ',
       href: '#',
       icon: TrashIcon,
     },

@@ -32,7 +32,7 @@
                         </div>
                         <div class=" mt-16 px-7 rtl text-right">
                             <h2 class=" text-gray-800 font-bold text-2xl mb-8">{{ blog.title }}</h2>
-                            <p v-html="blog.body" class=" text-gray-500 font-medium text-base mb-20 mr-2"></p>
+                            <p v-html="blog.body" class=" text-gray-500  text-base mb-20 mr-2"></p>
                         </div>
                     </div>
                 </div>

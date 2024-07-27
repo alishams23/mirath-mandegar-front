@@ -1,25 +1,25 @@
 <template>
-    <div class=" bg-white rounded-3xl w-[250px] h-[378.8px] shadow-3 lg:w-[290px] md:w-[290px]">
+    <div class=" bg-white rounded-3xl w-[230px] h-[300.8px] shadow-3 lg:w-[250px] md:w-[290px]">
         <div>
             <img class=" w-full h-[150px] object-cover rounded-t-3xl bg-cover bg-center contain "
                 :src="data.image[0].photo" alt="">
         </div>
         <div dir="rtl" class="">
-            <div class=" mb-5 px-2">
-                <h2 class=" text-md font-semibold my-3 mr-4">{{ data.title }}</h2>
-                <p class=" text-base h-14 text-sm mr-4 font-normal">{{ data.description }}</p>
+            <div class=" mb-5 px-2 h-14 overflow-hidden">
+                <h2 class=" text-md font-semibold my-3 mr-4 line-clamp-2">{{ data.title }}</h2>
+                <!-- <p class=" text-base  text-sm mr-4 line-clamp-2 font-normal">{{ data.description }}</p> -->
             </div>
             <div class=" border-t">
-                <div class="flex justify-around items-center p-4">
-                    <div class=" relative top-3 flex flex-col">
+                <div class="flex justify-around items-center p-4 ">
+                    <div class=" relative  flex flex-col">
 
-                        <p class=" text-xl font-semibold ">
+                        <p class=" text-sm font-semibold ">
 
                             {{ data.price - (data.price * data.discount / 100) }}
-                            <span class="text-sm font-light text-gray-400">تومان</span>
+                            <span class="text-xs font-light text-gray-400">تومان</span>
                         </p>
-                        <div class="flex items-center mt-2">
-                            <p class=" line-through  text-sm  text-gray-500">
+                        <div class="flex items-center ">
+                            <p class=" line-through  text-xs  text-gray-500">
 
                                 {{ data.price }}
                             </p>
